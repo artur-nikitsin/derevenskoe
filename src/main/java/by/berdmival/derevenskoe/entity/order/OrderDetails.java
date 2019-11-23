@@ -1,6 +1,6 @@
 package by.berdmival.derevenskoe.entity.order;
 
-import by.berdmival.derevenskoe.entity.book.Book;
+import by.berdmival.derevenskoe.entity.product.Product;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -24,19 +24,19 @@ public class OrderDetails {
     private Order order;
 
     @ManyToOne
-    @JoinColumn(name = "book_id")
-    private Book book;
+    @JoinColumn(name = "product_id")
+    private Product product;
 
     private int quantity;
 
-    public OrderDetails(Order order, Book book, Integer quantity) {
+    public OrderDetails(Order order, Product product, Integer quantity) {
         this.order = order;
-        this.book = book;
+        this.product = product;
         this.quantity = quantity;
     }
 
     @Transient
     public Double getTotalPrice() {
-        return this.getBook().getPrice() * this.getQuantity();
+        return this.getProduct().getPrice() * this.getQuantity();
     }
 }

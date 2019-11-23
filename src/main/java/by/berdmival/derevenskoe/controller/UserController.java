@@ -1,6 +1,6 @@
 package by.berdmival.derevenskoe.controller;
 
-import by.berdmival.bookstore.service.security.UserService;
+import by.berdmival.derevenskoe.service.security.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UserDetails;

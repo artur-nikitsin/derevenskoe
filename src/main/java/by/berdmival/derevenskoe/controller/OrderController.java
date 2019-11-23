@@ -1,11 +1,11 @@
 package by.berdmival.derevenskoe.controller;
 
-import by.berdmival.bookstore.dto.OrderForm;
-import by.berdmival.bookstore.dto.OrderProductDto;
-import by.berdmival.bookstore.entity.order.Order;
-import by.berdmival.bookstore.entity.order.OrderDetails;
-import by.berdmival.bookstore.service.order.OrderDetailsService;
-import by.berdmival.bookstore.service.order.OrderService;
+import by.berdmival.derevenskoe.dto.OrderForm;
+import by.berdmival.derevenskoe.dto.OrderProductDto;
+import by.berdmival.derevenskoe.entity.order.Order;
+import by.berdmival.derevenskoe.entity.order.OrderDetails;
+import by.berdmival.derevenskoe.service.order.OrderDetailsService;
+import by.berdmival.derevenskoe.service.order.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -40,7 +40,7 @@ public class OrderController {
 
         List<OrderDetails> orderProducts = new ArrayList<>();
         for (OrderProductDto dto : orderProductDtoList) {
-            orderProducts.add(orderDetailsService.create(new OrderDetails(order, dto.getBook(), dto.getQuantity())));
+            orderProducts.add(orderDetailsService.create(new OrderDetails(order, dto.getProduct(), dto.getQuantity())));
         }
 
         order.setOrderDetails(orderProducts);
