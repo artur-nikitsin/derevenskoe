@@ -3,20 +3,19 @@ package by.berdmival.derevenskoe.entity.product;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.io.Serializable;
 
 @Entity
 @Data
-@Table(name = "products")
-public class Product implements Serializable {
+@Table(name = "categories")
+public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Column(unique = true)
     private String name;
-    private double price;
-    private String pictureUri;
-    private double coefficient;
+
+    private String title;
     private String description;
 
     @OneToOne

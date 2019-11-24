@@ -1,5 +1,6 @@
 package by.berdmival.derevenskoe.service.product;
 
+import by.berdmival.derevenskoe.entity.product.Category;
 import by.berdmival.derevenskoe.entity.product.Product;
 import by.berdmival.derevenskoe.repository.product.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,5 +48,10 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public void deleteOneById(Long id) {
         productRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Product> findByCategory(Category category) {
+        return productRepository.findAllByCategory(category);
     }
 }
