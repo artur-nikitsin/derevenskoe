@@ -7,5 +7,5 @@ VALUES ('Complete');
 INSERT INTO order_statuses (name)
 VALUES ('Delivered');
 
-insert into categories ("name", "category_id", "description", "title") 
-values ( 'main', 1, 'Main catalog', 'Catalog' )
+insert into categories ("name", "category_id", "description", "title")
+values ('main', 1, 'Main catalog', 'Catalog')
