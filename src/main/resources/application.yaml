@@ -8,21 +8,24 @@ spring:
           okta:
             client-id: client
             client-secret: secret
-            client-name: Bookstore
+            client-name: derevenskoe
             provider: okta
-            redirect-uri-template: http://localhost:7777/derevenskoe/
+            redirect-uri-template: http://localhost:7777/
             client-authentication-method: basic
             authorization-grant-type: client_credentials
         provider:
           okta:
             token-uri: http://localhost:7777/oauth/token
             authorization-uri: http://localhost:7777/oauth/authorize
-            user-info-uri: http://localhost:7777/users/acc
+            user-info-uri: http://localhost:7777/users/validate
             user-name-attribute: name
   datasource:
     url: jdbc:postgresql://localhost:5432/derevenskoe
     username: postgres
     password: password
+  h2:
+    console:
+      enabled: true
   application:
     name: derevenskoe
   jpa:
