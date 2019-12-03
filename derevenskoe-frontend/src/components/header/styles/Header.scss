@@ -1,0 +1,51 @@
+
+@mixin reset-list {
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    li {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      list-style-type: none;
+
+      a {
+        text-decoration: none;
+        color: black;
+      }
+    }
+  }
+}
+
+
+.Header {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  height: 300px;
+
+
+  .HeaderTop {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: #98d648;
+    height: 50px;
+    @include reset-list
+  }
+
+  .HeaderMenu {
+    border: 1px solid #f3f0eb;
+    @include reset-list
+  }
+
+
+  .CategoriesMenu {
+    background: #f3f0eb;
+    border: 1px solid #f3f0eb;
+    @include reset-list
+  }
+
+}

@@ -3,8 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.7.1",
+    "node-sass": "^4.13.0",
+    "owl.carousel": "^2.3.4",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-owl-carousel2": "^0.3.0",
     "react-scripts": "3.2.0"
   },
   "scripts": {
@@ -27,5 +31,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@material-ui/icons": "^4.5.1",
+    "postcss-normalize": "^8.0.1"
   }
 }
