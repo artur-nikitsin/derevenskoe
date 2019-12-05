@@ -7,7 +7,7 @@ class HeaderTop extends Component {
     render() {
         return (
             <div className={"HeaderTop"}>
-                <Container>
+                <Container className={"container"}>
                     <ul>
                         <li><HeadsetMicIcon/> <a href="">+375(29)167-84-33</a></li>
                         <li><MailOutlineIcon/> <a href="">zakaz@derevenskoe-minsk.by</a></li>

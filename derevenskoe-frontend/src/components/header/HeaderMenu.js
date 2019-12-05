@@ -6,7 +6,7 @@ class HeaderMenu extends Component {
     render() {
         return (
             <div className={"HeaderMenu"}>
-                <Container>
+                <Container className={"container"}>
                <ul>
                    <li><a href="">ГЛАВНАЯ</a></li>
                    <li><a href="">КАТАЛОГ</a></li>

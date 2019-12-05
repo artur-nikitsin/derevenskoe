@@ -3,18 +3,34 @@
   ul {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: space-between;
+
 
     li {
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
+      height: 50px;
+      padding: 0 20px 0 20px;
       align-items: center;
       list-style-type: none;
 
       a {
         text-decoration: none;
+        text-align: center;
+        font-family: "Calibri", "Arial", sans-serif;
+        font-size: 15px;
         color: black;
       }
+    }
+    li:hover,
+    li:focus {
+      display: flex;
+      justify-content: space-between;
+      height: 50px;
+      padding: 0 20px 0 20px;
+      align-items: center;
+      list-style-type: none;
+      background:#98d648;
     }
   }
 }
