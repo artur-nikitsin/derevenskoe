@@ -10,7 +10,7 @@ class MainCarousel extends Component {
 
         function NextArrow(props) {
             const {className, onClick} = props;
-            console.log(className);
+
             return (
                 <ArrowForwardIosIcon
                     className={className}
