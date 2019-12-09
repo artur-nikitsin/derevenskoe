@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux'
 import {currentPageAction} from '../../actions/currentPageAction'
 import {Container} from '@material-ui/core';
-import "./styles/Header.scss"
+import "./styles/header.scss"
 
 class HeaderMenu extends Component {
 

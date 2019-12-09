@@ -3,7 +3,7 @@ import HeaderTop from "./HeaderTop";
 import HeaderMenu from "./HeaderMenu";
 import CategoriesMenu from "./CategoriesMenu";
 
-import "./styles/Header.scss"
+import "./styles/header.scss"
 
 class Header extends Component {
     render() {

@@ -1,4 +1,7 @@
 
+
+
+
 @mixin reset-list {
   ul {
     display: flex;
@@ -9,8 +12,8 @@
     li {
       display: flex;
       justify-content: center;
-      height: 50px;
-      padding: 0 20px 0 20px;
+      height: 30px;
+      padding: 0 5px 0 5px;
       align-items: center;
       list-style-type: none;
 
@@ -26,8 +29,8 @@
     li:focus {
       display: flex;
       justify-content: space-between;
-      height: 50px;
-      padding: 0 20px 0 20px;
+      height: 30px;
+      padding: 0 5px 0 5px;
       align-items: center;
       list-style-type: none;
       background:#98d648;
@@ -40,7 +43,7 @@
   width: 100%;
   padding: 0;
   margin: 0;
-  height: 300px;
+  height: 150px;
 
 
   .HeaderTop {
@@ -48,19 +51,19 @@
     flex-direction: row;
     align-items: center;
     background: #98d648;
-    height: 50px;
+    height: 30px;
     @include reset-list
   }
 
   .HeaderMenu {
-    border: 1px solid #f3f0eb;
+
     @include reset-list
   }
 
 
   .CategoriesMenu {
     background: #f3f0eb;
-    border: 1px solid #f3f0eb;
+
     @include reset-list
   }
 

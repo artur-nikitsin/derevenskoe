@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Container} from '@material-ui/core';
-import "./styles/Header.scss"
+import "./styles/header.scss"
 
 class CategoriesMenu extends Component {
     render() {
