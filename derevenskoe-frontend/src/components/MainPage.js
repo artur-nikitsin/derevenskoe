@@ -4,6 +4,7 @@ import {currentPageAction} from '../actions/currentPageAction'
 import {Container} from '@material-ui/core';
 import Header from "./header/Header";
 import MainCarousel from "./carousel/mainCarousel";
+import Catalog from "./catalog/Catalog";
 import Delivery from "./delivery/Delivery";
 import CategoriesMenu from "./header/CategoriesMenu";
 
@@ -25,7 +26,7 @@ class MainPage extends Component {
                 return <MainCarousel/>
             }
             if (currentPage === 'catalog') {
-                return <p>Catalog</p>
+                return <Catalog/>
             }
             if (currentPage === 'delivery') {
                 return <Delivery/>
