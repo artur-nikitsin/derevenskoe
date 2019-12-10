@@ -1,7 +1,3 @@
-
-
-
-
 @mixin reset-list {
   ul {
     display: flex;
@@ -25,15 +21,17 @@
         color: black;
       }
     }
+
     li:hover,
-    li:focus {
+    li:focus,
+     .active {
       display: flex;
       justify-content: space-between;
       height: 30px;
       padding: 0 5px 0 5px;
       align-items: center;
       list-style-type: none;
-      background:#98d648;
+      background: #98d648;
     }
   }
 }

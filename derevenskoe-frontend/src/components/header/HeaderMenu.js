@@ -10,20 +10,55 @@ class HeaderMenu extends Component {
         super(props);
     }
 
-    changePage = (val) => this.props.dispatch(currentPageAction(val));
+    changePage = (val, e) => {
+        e.preventDefault();
+        this.props.dispatch(currentPageAction(val))
+    };
+
 
     render() {
+        const currentPage = this.props.currentPage;
+
         return (
             <div className={"HeaderMenu"}>
                 <Container className={"container"}>
                     <ul>
-                        <li onClick={() => this.changePage('main')}><a href="">ГЛАВНАЯ</a></li>
-                        <li onClick={() => this.changePage('catalog')}><a href="">КАТАЛОГ</a></li>
-                        <li onClick={() => this.changePage('delivery')}><a href="">ДОСТАВКА И ОПЛАТА</a></li>
-                        <li onClick={() => this.changePage('cooperation')}><a href="">СОТРУДНИЧЕСТВО</a></li>
-                        <li onClick={() => this.changePage('contacts')}><a href="">КОНТАКТЫ</a></li>
-                        <li onClick={() => this.changePage('search')}><a href="">Search</a></li>
-                        <li onClick={() => this.changePage('basket')}><a href="">КОРЗИНА</a></li>
+
+                        <li className={currentPage === 'main' ? 'active' : ''}>
+                            <a href="" onClick={(e) =>
+                                this.changePage('main', e)}>ГЛАВНАЯ</a>
+                        </li>
+
+                        <li className={currentPage === 'catalog' ? 'active' : ''}>
+                            <a href="" onClick={(e) =>
+                                this.changePage('catalog', e)}>КАТАЛОГ</a>
+                        </li>
+
+                        <li className={currentPage === 'delivery' ? 'active' : ''}>
+                            <a href="" onClick={(e) =>
+                                this.changePage('delivery', e)}>ДОСТАВКА И ОПЛАТА</a>
+                        </li>
+
+                        <li className={currentPage === 'cooperation' ? 'active' : ''}>
+                            <a href="" onClick={(e) =>
+                                this.changePage('cooperation', e)}>СОТРУДНИЧЕСТВО</a>
+                        </li>
+
+                        <li className={currentPage === 'contacts' ? 'active' : ''}>
+                            <a href="" onClick={(e) =>
+                                this.changePage('contacts', e)}>КОНТАКТЫ</a>
+                        </li>
+
+                        <li className={currentPage === 'search' ? 'active' : ''}>
+                            <a href="" onClick={(e) =>
+                                this.changePage('search', e)}>Search</a>
+                        </li>
+
+                        <li className={currentPage === 'basket' ? 'active' : ''}>
+                            <a href="" onClick={(e) =>
+                                this.changePage('basket', e)}>КОРЗИНА</a>
+                        </li>
+
                     </ul>
                 </Container>
             </div>

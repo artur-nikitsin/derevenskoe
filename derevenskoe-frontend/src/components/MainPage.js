@@ -24,12 +24,24 @@ class MainPage extends Component {
             if (currentPage === 'main') {
                 return <MainCarousel/>
             }
-            if (currentPage === 'catalog') return <p>Catalog</p>
-            if (currentPage === 'delivery') {return <Delivery/>}
-            if (currentPage === 'cooperation') return <p>Cooperation</p>
-            if (currentPage === 'contacts') return <p>Contacts</p>
-            if (currentPage === 'search') return <p>search</p>
-            if (currentPage === 'basket') return <p>basket</p>
+            if (currentPage === 'catalog') {
+                return <p>Catalog</p>
+            }
+            if (currentPage === 'delivery') {
+                return <Delivery/>
+            }
+            if (currentPage === 'cooperation') {
+                return <p>Cooperation</p>
+            }
+            if (currentPage === 'contacts') {
+                return <p>Contacts</p>
+            }
+            if (currentPage === 'search') {
+                return <p>search</p>
+            }
+            if (currentPage === 'basket') {
+                return <p>basket</p>
+            }
         }
 
 
