@@ -45,6 +45,8 @@ class MainCarousel extends Component {
 
         };
 
+       /*TODO:    realize img requiring from components folders  */
+
         return (
             <Container className={"container"}>
                 <Slider {...settings}>
