@@ -2,6 +2,7 @@
   "name": "derevenskoe-frontend",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://berdmival.github.io/derevenskoe/",
   "dependencies": {
     "@material-ui/core": "^4.7.1",
     "node-sass": "^4.13.0",
@@ -20,7 +21,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,6 +42,7 @@
   },
   "devDependencies": {
     "@material-ui/icons": "^4.5.1",
+    "gh-pages": "^2.1.1",
     "postcss-normalize": "^8.0.1"
   }
 }
