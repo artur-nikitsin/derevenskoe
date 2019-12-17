@@ -6,13 +6,16 @@ import Header from "./header/Header";
 import MainCarousel from "./carousel/mainCarousel";
 import Catalog from "./catalog/Catalog";
 import Delivery from "./delivery/Delivery";
+import Contacts from "./contacts/Contacts";
+import Bucket from "./bucket/Busket"
+import Footer from "./footer/Footer";
 import CategoriesMenu from "./header/CategoriesMenu";
 import {
     BrowserRouter,
     Route,
     Link
 } from "react-router-dom";
-import { createBrowserHistory } from "history";
+import {createBrowserHistory} from "history";
 
 
 const history = createBrowserHistory();
@@ -34,7 +37,7 @@ class MainPage extends Component {
                   return <MainCarousel/>
               }
               if (currentPage === 'catalog') {
-                  return <Catalog/>
+                  return <Contacts/>
               }
               if (currentPage === 'delivery') {
                   return <Delivery/>
@@ -61,9 +64,10 @@ class MainPage extends Component {
                     <Route exact path='/' component={MainCarousel}/>
                     <Route exact path='/catalog' component={Catalog}/>
                     <Route exact path='/delivery' component={Delivery}/>
-                    <Route exact path='/contacts' component={Delivery}/>
+                    <Route exact path='/contacts' component={Contacts}/>
                     <Route exact path='/search' component={Delivery}/>
-                    <Route exact path='/basket' component={Catalog}/>
+                    <Route exact path='/basket' component={Bucket}/>
+                    <Footer/>
                 </div>
             </BrowserRouter>
         )

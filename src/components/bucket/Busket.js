@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import {Container} from '@material-ui/core';
 
 
-class Busket extends Component {
+class Bucket extends Component {
 
     constructor(props) {
         super(props);
@@ -14,10 +14,10 @@ class Busket extends Component {
 
         return (
             <Container>
-                <div><p>Contacts</p></div>
+                <div><p>Bucket</p></div>
             </Container>
         );
     }
 
 }
-export default Busket;
+export default Bucket;

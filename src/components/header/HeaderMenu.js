@@ -12,10 +12,10 @@ class HeaderMenu extends Component {
         super(props);
     }
 
-    changePage = (val, e) => {
+   /* changePage = (val, e) => {
         e.preventDefault();
         this.props.dispatch(currentPageAction(val))
-    };
+    };*/
 
 
     render() {
@@ -34,6 +34,7 @@ class HeaderMenu extends Component {
                         <li><NavLink to="search" exact activeClassName='active'> Search </NavLink></li>
                         <li><NavLink to="basket" exact activeClassName='active'> КОРЗИНА </NavLink></li>
                         {/*  react router*/}
+                        
                         {/*
                         <li className={currentPage === 'main' ? 'active' : ''}>
                             <a href="" onClick={(e) =>
