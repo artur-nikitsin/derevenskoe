@@ -3,11 +3,7 @@ import {connect} from 'react-redux'
 import {currentPageAction} from '../../actions/currentPageAction'
 import {Container} from '@material-ui/core';
 import "./styles/header.scss"
-import {
-    BrowserRouter,
-    Route,
-    Link
-} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 
 
 class HeaderMenu extends Component {
@@ -31,14 +27,14 @@ class HeaderMenu extends Component {
                     <ul>
 
                         {/*  react router*/}
-                        <li><Link to="/"> TestMainCarousel </Link></li>
-                        <li><Link to="catalog"> Catalog </Link></li>
-                        <li><Link to="delivery"> Delivery </Link></li>
-                        <li><Link to="contacts"> Contacts </Link></li>
-                        <li><Link to="search"> Search </Link></li>
-                        <li><Link to="basket"> Basket </Link></li>
+                        <li><NavLink to="/"  exact activeClassName={'active'}> TestMainCarousel </NavLink></li>
+                        <li><NavLink to="catalog"  activeClassName="active"> Catalog </NavLink></li>
+                        <li><NavLink to="delivery" activeClassName='active'> Delivery </NavLink></li>
+                        <li><NavLink to="contacts"> Contacts </NavLink></li>
+                        <li><NavLink to="search"> Search </NavLink></li>
+                        <li><NavLink to="basket"> Basket </NavLink></li>
                         {/*  react router*/}
-{/*
+                        {/*
                         <li className={currentPage === 'main' ? 'active' : ''}>
                             <a href="" onClick={(e) =>
                                 this.changePage('main', e)}>ГЛАВНАЯ</a>

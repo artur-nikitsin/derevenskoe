@@ -5,10 +5,9 @@ import {Provider} from 'react-redux';
 import store from './store'
 
 
-
 const AppContainer = () => (
     <Provider store={store}>
-            <App/>
+        <App/>
     </Provider>
 );
 

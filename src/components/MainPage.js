@@ -12,7 +12,10 @@ import {
     Route,
     Link
 } from "react-router-dom";
+import { createBrowserHistory } from "history";
 
+
+const history = createBrowserHistory();
 
 class MainPage extends Component {
 
@@ -50,9 +53,8 @@ class MainPage extends Component {
               }
           }
   */
-
         return (
-            <BrowserRouter>
+            <BrowserRouter history={history}>
                 <div>
                     <Header/>
                     {/*  <CurrentPage/>*/}
@@ -61,8 +63,7 @@ class MainPage extends Component {
                     <Route exact path='/delivery' component={Delivery}/>
                     <Route exact path='/contacts' component={Delivery}/>
                     <Route exact path='/search' component={Delivery}/>
-                    <Route exact path='/catalog' component={Catalog}/>
-
+                    <Route exact path='/basket' component={Catalog}/>
                 </div>
             </BrowserRouter>
         )
