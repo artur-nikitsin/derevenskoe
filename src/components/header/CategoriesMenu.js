@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Container} from '@material-ui/core';
 import "./styles/header.scss"
+import {Link, NavLink} from "react-router-dom";
 
 class CategoriesMenu extends Component {
     render() {

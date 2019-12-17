@@ -1,0 +1,58 @@
+[
+  {
+    "category": {
+      "description": "vegetables",
+      "id": "01",
+      "name": "vegetables",
+      "title": "vegetables"
+    },
+    "coefficient": 0,
+    "description": "Тыква выращивается Оксаной Бабако в гп. Бегомль(Докшицкий район) в экологических условиях",
+    "id": "0",
+    "name": "Тыква(вес 2-3кг)",
+    "pictureUrl": "assets/images/products/vegetables/3e7z9w8r0my.jpg",
+    "price": 3
+  },
+  {
+    "category": {
+      "description": "vegetables",
+      "id": "01",
+      "name": "vegetables",
+      "title": "vegetables"
+    },
+    "coefficient": 0,
+    "description": "Выращивается с любовью на небольшом личном участке без применения химических и минеральных удобрений Оксаной Бабако в г.п. Бегомль(Докшицкий район)",
+    "id": "01",
+    "name": "Свекла",
+    "pictureUrl": "assets/images/products/vegetables/ebqu6enqha8.jpg",
+    "price": 2
+  },
+  {
+    "category": {
+      "description": "vegetables",
+      "id": "01",
+      "name": "vegetables",
+      "title": "vegetables"
+    },
+    "coefficient": 0,
+    "description": "Выращивается с любовью на небольшом личном участке без применения химических и минеральных удобрений Оксаной Бабако в г.п. Бегомль(Докшицкий район)",
+    "id": "02",
+    "name": "Морковь",
+    "pictureUrl": "assets/images/products/vegetables/z0njs48rlqc.jpg",
+    "price": 2.5
+  },
+  {
+    "category": {
+      "description": "vegetables",
+      "id": "01",
+      "name": "vegetables",
+      "title": "vegetables"
+    },
+    "coefficient": 0,
+    "description": "Выращивается с любовью на небольшом личном участке без применения химических и минеральных удобрений Оксаной Бабако в г.п. Бегомль(Докшицкий район)",
+    "id": "03",
+    "name": "Картофель",
+    "pictureUrl": "assets/images/products/vegetables/mpkuttx-g8i.jpg",
+    "price": 2
+  }
+]

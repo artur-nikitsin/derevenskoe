@@ -45,16 +45,16 @@ class MainCarousel extends Component {
 
         };
 
-       /*TODO:    realize img requiring from components folders  */
+       /*TODO:    realize images requiring from components folders  */
 
         return (
             <Container className={"container"}>
                 <Slider {...settings}>
                     <div>
-                        <img src="img/10022a-960x400.webp" alt=""/>
+                        <img src="assets/caroucel/10022a-960x400.webp" alt=""/>
                     </div>
                     <div>
-                        <img src="img/bbab61-960x400.webp" alt=""/>
+                        <img src="assets/caroucel/bbab61-960x400.webp" alt=""/>
                     </div>
 
                 </Slider>
