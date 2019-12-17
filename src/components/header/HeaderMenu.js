@@ -27,12 +27,12 @@ class HeaderMenu extends Component {
                     <ul>
 
                         {/*  react router*/}
-                        <li><NavLink to="/"  exact activeClassName={'active'}> TestMainCarousel </NavLink></li>
-                        <li><NavLink to="catalog"  activeClassName="active"> Catalog </NavLink></li>
-                        <li><NavLink to="delivery" activeClassName='active'> Delivery </NavLink></li>
-                        <li><NavLink to="contacts"> Contacts </NavLink></li>
-                        <li><NavLink to="search"> Search </NavLink></li>
-                        <li><NavLink to="basket"> Basket </NavLink></li>
+                        <li><NavLink to="/" exact activeClassName='active'> ГЛАВНАЯ </NavLink></li>
+                        <li><NavLink to="catalog" exact activeClassName='active'> КАТАЛОГ </NavLink></li>
+                        <li><NavLink to="delivery" exact activeClassName='active'> ДОСТАВКА </NavLink></li>
+                        <li><NavLink to="contacts" exact activeClassName='active'> КОНТАКТЫ </NavLink></li>
+                        <li><NavLink to="search" exact activeClassName='active'> Search </NavLink></li>
+                        <li><NavLink to="basket" exact activeClassName='active'> КОРЗИНА </NavLink></li>
                         {/*  react router*/}
                         {/*
                         <li className={currentPage === 'main' ? 'active' : ''}>
