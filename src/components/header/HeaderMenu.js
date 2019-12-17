@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux'
 import {currentPageAction} from '../../actions/currentPageAction'
 import {Container} from '@material-ui/core';
+import SearchIcon from '@material-ui/icons/Search';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import "./styles/header.scss"
 import {Link, NavLink} from "react-router-dom";
 
@@ -12,10 +14,10 @@ class HeaderMenu extends Component {
         super(props);
     }
 
-   /* changePage = (val, e) => {
-        e.preventDefault();
-        this.props.dispatch(currentPageAction(val))
-    };*/
+    /* changePage = (val, e) => {
+         e.preventDefault();
+         this.props.dispatch(currentPageAction(val))
+     };*/
 
 
     render() {
@@ -31,10 +33,11 @@ class HeaderMenu extends Component {
                         <li><NavLink to="catalog" exact activeClassName='active'> КАТАЛОГ </NavLink></li>
                         <li><NavLink to="delivery" exact activeClassName='active'> ДОСТАВКА </NavLink></li>
                         <li><NavLink to="contacts" exact activeClassName='active'> КОНТАКТЫ </NavLink></li>
-                        <li><NavLink to="search" exact activeClassName='active'> Search </NavLink></li>
-                        <li><NavLink to="basket" exact activeClassName='active'> КОРЗИНА </NavLink></li>
+                        <li><SearchIcon/> <NavLink to="search" exact activeClassName='active'> ПОИСК </NavLink></li>
+                        <li><ShoppingCartIcon/> <NavLink to="basket" exact activeClassName='active'> КОРЗИНА </NavLink>
+                        </li>
                         {/*  react router*/}
-                        
+
                         {/*
                         <li className={currentPage === 'main' ? 'active' : ''}>
                             <a href="" onClick={(e) =>
