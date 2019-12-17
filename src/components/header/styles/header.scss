@@ -19,18 +19,31 @@
         font-family: "Calibri", "Arial", sans-serif;
         font-size: 15px;
         color: black;
+
+
+      }
+
+      a:hover,
+      a:focus {
+        display: flex;
+        justify-content: space-between;
+        font-family: "Calibri", "Arial", sans-serif;
+        color: #98d648;
+        align-items: center;
+        list-style-type: none;
+      }
+
+      a.active {
+        display: flex;
+        justify-content: space-between;
+        font-family: "Calibri", "Arial", sans-serif;
+        color: #ff7a2c;
+        align-items: center;
+        list-style-type: none;
       }
     }
 
-    li:hover,
-    li:focus,
-     .active {
-      display: flex;
-      justify-content: space-between;
-      color: #ff7a2c;
-      align-items: center;
-      list-style-type: none;
-    }
+
   }
 }
 
