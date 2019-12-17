@@ -3,6 +3,12 @@ import {connect} from 'react-redux'
 import {currentPageAction} from '../../actions/currentPageAction'
 import {Container} from '@material-ui/core';
 import "./styles/header.scss"
+import {
+    BrowserRouter,
+    Route,
+    Link
+} from "react-router-dom";
+
 
 class HeaderMenu extends Component {
 
@@ -24,6 +30,15 @@ class HeaderMenu extends Component {
                 <Container className={"container"}>
                     <ul>
 
+                        {/*  react router*/}
+                        <li><Link to="/"> TestMainCarousel </Link></li>
+                        <li><Link to="catalog"> Catalog </Link></li>
+                        <li><Link to="delivery"> Delivery </Link></li>
+                        <li><Link to="contacts"> Contacts </Link></li>
+                        <li><Link to="search"> Search </Link></li>
+                        <li><Link to="basket"> Basket </Link></li>
+                        {/*  react router*/}
+{/*
                         <li className={currentPage === 'main' ? 'active' : ''}>
                             <a href="" onClick={(e) =>
                                 this.changePage('main', e)}>ГЛАВНАЯ</a>
@@ -57,8 +72,7 @@ class HeaderMenu extends Component {
                         <li className={currentPage === 'basket' ? 'active' : ''}>
                             <a href="" onClick={(e) =>
                                 this.changePage('basket', e)}>КОРЗИНА</a>
-                        </li>
-
+                        </li>*/}
                     </ul>
                 </Container>
             </div>
