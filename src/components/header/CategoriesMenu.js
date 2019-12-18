@@ -9,18 +9,19 @@ class CategoriesMenu extends Component {
             <div className={"CategoriesMenu"}>
                 <Container className={"container"}>
                     <ul>
-                        <li><a href="">Овощи</a></li>
-                        <li><a href="">Закатки</a></li>
-                        <li><a href="">Варенье</a></li>
-                        <li><a href="">Пельмени и вареники</a></li>
-                        <li><a href="">Молочные продукты</a></li>
-                        <li><a href="">Хлеб</a></li>
-
-                        <li><a href="">Мясо</a></li>
-                        <li><a href="">Яйца и мед</a></li>
-                        <li><a href="">Растительные масла и урбеч</a></li>
-                        <li><a href="">Травяной чай</a></li>
-                        <li><a href="">Разное</a></li>
+                        <li><NavLink to="/catalog/vegetables" activeClassName='active'>Овощи</NavLink></li>
+                        <li><NavLink to="/catalog/zakatki" activeClassName='active'>Закатки</NavLink></li>
+                        <li><NavLink to="/catalog/jam" activeClassName='active'>Варенье</NavLink></li>
+                        <li><NavLink to="/catalog/dumplings" activeClassName='active'>Пельмени и вареники</NavLink></li>
+                        <li><NavLink to="/catalog/milk_products" activeClassName='active'>Молочные продукты</NavLink>
+                        </li>
+                        <li><NavLink to="/catalog/bread" activeClassName='active'>Хлеб</NavLink></li>
+                        <li><NavLink to="/catalog/meat" activeClassName='active'>Мясо</NavLink></li>
+                        <li><NavLink to="/catalog/eggs_honey" activeClassName='active'>Яйца и мед</NavLink></li>
+                        <li><NavLink to="/catalog/oils" activeClassName='active'>Растительные масла и урбеч</NavLink>
+                        </li>
+                        <li><NavLink to="/catalog/tea" activeClassName='active'>Травяной чай</NavLink></li>
+                        <li><NavLink to="/catalog/other" activeClassName='active'>Разное</NavLink></li>
                     </ul>
 
 

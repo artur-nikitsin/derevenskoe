@@ -30,11 +30,11 @@ class HeaderMenu extends Component {
 
                         {/*  react router*/}
                         <li><NavLink to="/" exact activeClassName='active'> ГЛАВНАЯ </NavLink></li>
-                        <li><NavLink to="catalog" exact activeClassName='active'> КАТАЛОГ </NavLink></li>
-                        <li><NavLink to="delivery" exact activeClassName='active'> ДОСТАВКА </NavLink></li>
-                        <li><NavLink to="contacts" exact activeClassName='active'> КОНТАКТЫ </NavLink></li>
-                        <li><SearchIcon/> <NavLink to="search" exact activeClassName='active'> ПОИСК </NavLink></li>
-                        <li><ShoppingCartIcon/> <NavLink to="basket" exact activeClassName='active'> КОРЗИНА </NavLink>
+                        <li><NavLink to="/catalog"  activeClassName='active'> КАТАЛОГ </NavLink></li>
+                        <li><NavLink to="/delivery" exact activeClassName='active'> ДОСТАВКА </NavLink></li>
+                        <li><NavLink to="/contacts" exact activeClassName='active'> КОНТАКТЫ </NavLink></li>
+                        <li><SearchIcon/> <NavLink to="/search" exact activeClassName='active'> ПОИСК </NavLink></li>
+                        <li><ShoppingCartIcon/> <NavLink to="/basket" exact activeClassName='active'> КОРЗИНА </NavLink>
                         </li>
                         {/*  react router*/}
 

@@ -62,11 +62,11 @@ class MainPage extends Component {
                     <Header/>
                     {/*  <CurrentPage/>*/}
                     <Route exact path='/' component={MainCarousel}/>
-                    <Route exact path='/catalog' component={Catalog}/>
-                    <Route exact path='/delivery' component={Delivery}/>
-                    <Route exact path='/contacts' component={Contacts}/>
-                    <Route exact path='/search' component={Delivery}/>
-                    <Route exact path='/basket' component={Bucket}/>
+                    <Route path='/catalog' component={Catalog}/>
+                    <Route path='/delivery' component={Delivery}/>
+                    <Route path='/contacts' component={Contacts}/>
+                    <Route path='/search' component={Delivery}/>
+                    <Route path='/basket' component={Bucket}/>
                     <Footer/>
                 </div>
             </BrowserRouter>
