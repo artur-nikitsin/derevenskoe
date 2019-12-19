@@ -2,11 +2,6 @@ import React, {Component} from 'react';
 import {Container} from '@material-ui/core';
 import ProductCard from "../productCard/ProductCard";
 
-/*Mock for AJAX*/
-
-/*import "../../../../public/json/vegetables.json"*/
-
-
 class Vegetables extends Component {
 
 
@@ -41,19 +36,29 @@ class Vegetables extends Component {
             .catch(function (err) {
                 console.log('Fetch Error :-S', err);
             });
-
     }
 
 
     render() {
 
-
-        console.log(this.state);
+        let productsToPage;
+        if (this.state.products) {
+            console.log(this.state.products);
+            productsToPage = (this.state.products).map((item, i) => (
+                <ProductCard
+                    description={item.description}
+                    id={i}
+                    name={item.name}
+                    picture={item.pictureUrl}
+                />
+            ));
+        }
 
         return (
             <Container>
                 <div><p>Vegetables</p></div>
-                <ProductCard/>
+
+                {productsToPage}
             </Container>
         );
     }

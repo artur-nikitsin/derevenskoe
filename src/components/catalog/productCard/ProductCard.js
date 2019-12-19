@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -12,37 +12,39 @@ const useStyles = makeStyles({
     card: {
         maxWidth: 345,
     },
+    media: {
+        height: 140,
+    },
 });
 
-export default function ProductCard() {
+
+export default function MediaCard(props) {
+
     const classes = useStyles();
 
     return (
         <Card className={classes.card}>
             <CardActionArea>
                 <CardMedia
-                    component="img"
-                    alt="Contemplative Reptile"
-                    height="140"
-                    image="/assets/images/products/vegetables/3e7z9w8r0my.jpg"
+                    className={classes.media}
+                    image={props.picture}
                     title="Contemplative Reptile"
                 />
                 <CardContent>
                     <Typography gutterBottom variant="h5" component="h2">
-                        Lizard
+                        {props.name}
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                        Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                        across all continents except Antarctica
+                        {props.description}
                     </Typography>
                 </CardContent>
             </CardActionArea>
             <CardActions>
                 <Button size="small" color="primary">
-                    Share
+                   Подробнее
                 </Button>
                 <Button size="small" color="primary">
-                    Learn More
+                    Добавить в корзину
                 </Button>
             </CardActions>
         </Card>
