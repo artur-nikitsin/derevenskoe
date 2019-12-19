@@ -13,7 +13,7 @@ import CategoriesMenu from "./header/CategoriesMenu";
 import {
     BrowserRouter,
     Route,
-    Link
+    Link, Switch
 } from "react-router-dom";
 import {createBrowserHistory} from "history";
 
@@ -58,17 +58,16 @@ class MainPage extends Component {
   */
         return (
             <BrowserRouter history={history}>
-                <div>
-                    <Header/>
-                    {/*  <CurrentPage/>*/}
-                    <Route exact path='/' component={MainCarousel}/>
-                    <Route path='/catalog' component={Catalog}/>
-                    <Route path='/delivery' component={Delivery}/>
-                    <Route path='/contacts' component={Contacts}/>
-                    <Route path='/search' component={Delivery}/>
-                    <Route path='/basket' component={Bucket}/>
-                    <Footer/>
-                </div>
+
+                <Header/>
+                <Route exact path='/' component={MainCarousel}/>
+                <Route path='/catalog' component={Catalog}/>
+                <Route path='/delivery' component={Delivery}/>
+                <Route path='/contacts' component={Contacts}/>
+                <Route path='/search' component={Delivery}/>
+                <Route path='/basket' component={Bucket}/>
+
+                <Footer/>
             </BrowserRouter>
         )
     }

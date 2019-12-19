@@ -7,6 +7,8 @@ import "./styles/header.scss"
 
 class Header extends Component {
     render() {
+
+
         return (
             <div className={"Header"}>
                 <HeaderTop/>
