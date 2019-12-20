@@ -33,32 +33,6 @@ class MainPage extends Component {
 
     render() {
 
-        /*  const currentPage = this.props.currentPage;
-
-          function CurrentPage() {
-              if (currentPage === 'main') {
-                  return <MainCarousel/>
-              }
-              if (currentPage === 'catalog') {
-                  return <Contacts/>
-              }
-              if (currentPage === 'delivery') {
-                  return <Delivery/>
-              }
-              if (currentPage === 'cooperation') {
-                  return <p>Cooperation</p>
-              }
-              if (currentPage === 'contacts') {
-                  return <p>Contacts</p>
-              }
-              if (currentPage === 'search') {
-                  return <p>search</p>
-              }
-              if (currentPage === 'basket') {
-                  return <p>basket</p>
-              }
-          }
-  */
         return (
             <BrowserRouter history={history}>
 
@@ -66,10 +40,7 @@ class MainPage extends Component {
                     container
                     direction="column"
                     justify="space-between"
-                    alignItems="space-around"
-
-
-                >
+                    alignItems="space-around">
 
                     <Header/>
                     <div className={"mainPage"}>
