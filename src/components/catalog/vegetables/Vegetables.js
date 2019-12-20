@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import {Container} from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
+
 import ProductCard from "../productCard/ProductCard";
 
 class Vegetables extends Component {
@@ -43,7 +45,7 @@ class Vegetables extends Component {
 
         let productsToPage;
         if (this.state.products) {
-            console.log(this.state.products);
+
             productsToPage = (this.state.products).map((item, i) => (
                 <ProductCard
                     description={item.description}
@@ -56,9 +58,19 @@ class Vegetables extends Component {
 
         return (
             <Container>
-                <div><p>Vegetables</p></div>
 
-                {productsToPage}
+                <Grid
+                    container
+                    direction="row"
+                    justify="space-between"
+                    alignItems="space-around"
+
+                >
+                    {productsToPage}
+
+                </Grid>
+
+
             </Container>
         );
     }

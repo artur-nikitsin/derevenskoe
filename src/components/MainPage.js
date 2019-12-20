@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux'
 import {currentPageAction} from '../actions/currentPageAction'
 import {Container} from '@material-ui/core';
+import Grid from '@material-ui/core/Grid';
+
 import Header from "./header/Header";
 import MainCarousel from "./carousel/mainCarousel";
 import Catalog from "./catalog/Catalog";
@@ -19,6 +21,7 @@ import {createBrowserHistory} from "history";
 
 
 const history = createBrowserHistory();
+
 
 class MainPage extends Component {
 
@@ -59,15 +62,28 @@ class MainPage extends Component {
         return (
             <BrowserRouter history={history}>
 
-                <Header/>
-                <Route exact path='/' component={MainCarousel}/>
-                <Route path='/catalog' component={Catalog}/>
-                <Route path='/delivery' component={Delivery}/>
-                <Route path='/contacts' component={Contacts}/>
-                <Route path='/search' component={Delivery}/>
-                <Route path='/basket' component={Bucket}/>
+                <Grid
+                    container
+                    direction="column"
+                    justify="space-between"
+                    alignItems="space-around"
 
-                <Footer/>
+
+                >
+
+                    <Header/>
+                    <div className={"mainPage"}>
+                        <Route exact path='/' component={MainCarousel}/>
+                        <Route path='/catalog' component={Catalog}/>
+                        <Route path='/delivery' component={Delivery}/>
+                        <Route path='/contacts' component={Contacts}/>
+                        <Route path='/search' component={Delivery}/>
+                        <Route path='/basket' component={Bucket}/>
+                    </div>
+                    <Footer/>
+
+                </Grid>
+
             </BrowserRouter>
         )
     }

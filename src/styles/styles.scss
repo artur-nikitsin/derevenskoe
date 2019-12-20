@@ -1,3 +1,10 @@
 body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background: #f3f0eb;
+}
+
+.mainPage {
+  height: 1000px;
 }
