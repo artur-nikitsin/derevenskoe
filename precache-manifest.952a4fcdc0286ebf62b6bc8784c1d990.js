@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "04ddc11538194f464d6204238294c688",
+    "revision": "890e479cbb37b0475fb360a0e437d9c6",
     "url": "berdmival.github.io/derevenskoe/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "berdmival.github.io/derevenskoe/static/css/2.4c487673.chunk.css"
   },
   {
-    "revision": "58dbccbdeee953a572a0",
+    "revision": "8541dfd42abc54263f65",
     "url": "berdmival.github.io/derevenskoe/static/css/main.f92cd3a7.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "berdmival.github.io/derevenskoe/static/js/2.2bdec7a2.chunk.js"
   },
   {
-    "revision": "58dbccbdeee953a572a0",
-    "url": "berdmival.github.io/derevenskoe/static/js/main.bcbafdbd.chunk.js"
+    "revision": "8541dfd42abc54263f65",
+    "url": "berdmival.github.io/derevenskoe/static/js/main.13b41732.chunk.js"
   },
   {
     "revision": "48e80ad396d9d859417e",
