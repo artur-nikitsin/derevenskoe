@@ -10,14 +10,14 @@ spring:
             client-secret: secret
             client-name: derevenskoe
             provider: okta
-            redirect-uri-template: http://localhost:7777/
+            redirect-uri-template: https://derevenskoe.herokuapp.com/
             client-authentication-method: basic
             authorization-grant-type: client_credentials
         provider:
           okta:
-            token-uri: http://localhost:7777/oauth/token
-            authorization-uri: http://localhost:7777/oauth/authorize
-            user-info-uri: http://localhost:7777/users/validate
+            token-uri: https://derevenskoe.herokuapp.com/oauth/token
+            authorization-uri: https://derevenskoe.herokuapp.com/oauth/authorize
+            user-info-uri: https://derevenskoe.herokuapp.com/users/validate
             user-name-attribute: name
   datasource:
     url: jdbc:postgresql://localhost:5432/derevenskoe
