@@ -1,5 +1,7 @@
 package by.berdmival.derevenskoe.controller;
 
+import by.berdmival.derevenskoe.entity.account.Account;
+import by.berdmival.derevenskoe.service.account.AccountService;
 import by.berdmival.derevenskoe.service.security.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,10 +17,16 @@ import java.security.Principal;
 public class UserController {
     @Autowired
     private UserService userService;
+    @Autowired
+    private AccountService accountService;
 
     @PostMapping(path = "/users")
     public ResponseEntity<UserDetails> addUser(@RequestParam String username, @RequestParam String password) {
-        return ResponseEntity.ok(userService.addUser(username, password));
+        UserDetails userDetails = userService.addUser(username, password);
+        Account account = new Account();
+        account.setUsername(userDetails.getUsername());
+        accountService.add(account);
+        return ResponseEntity.ok(userDetails);
     }
 
     @RequestMapping("/users/validate")

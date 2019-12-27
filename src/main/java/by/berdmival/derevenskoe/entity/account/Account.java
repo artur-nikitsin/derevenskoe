@@ -1,8 +1,10 @@
 package by.berdmival.derevenskoe.entity.account;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -18,6 +20,9 @@ public class Account {
     private String lastName;
     private String patronymic;
     private String phoneNumber;
-    private String address;
     private String photoUri;
+
+    @JsonManagedReference
+    @OneToMany(mappedBy = "account")
+    private List<DeliveryAddress> address;
 }

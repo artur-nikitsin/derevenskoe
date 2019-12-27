@@ -1,9 +1,11 @@
 package by.berdmival.derevenskoe.entity.product;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Data
@@ -18,7 +20,18 @@ public class Product implements Serializable {
     private String pictureUri;
     private double coefficient;
     private String description;
+    private boolean advisable;
+    private boolean enabled;
 
     @OneToOne
     private Category category;
+
+    @JsonIgnore
+    @ManyToMany
+    @JoinTable(
+            name = "related_products",
+            joinColumns = @JoinColumn(name = "parent_id"),
+            inverseJoinColumns = @JoinColumn(name = "child_id")
+    )
+    private List<Product> relatedProducts;
 }
