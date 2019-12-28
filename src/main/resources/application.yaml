@@ -20,9 +20,9 @@ spring:
 #            user-info-uri: https://derevenskoe.herokuapp.com/users/validate
 #            user-name-attribute: name
   datasource:
-    url: jdbc:postgresql://localhost:5432/derevenskoe
-    username: postgres
-    password: password
+    url: ${JDBC_DATABASE_URL:jdbc:postgresql://localhost:5432/derevenskoe}
+    username: ${JDBC_DATABASE_USERNAME:postgres}
+    password: ${JDBC_DATABASE_PASSWORD:password}
   application:
     name: derevenskoe
   jpa:
