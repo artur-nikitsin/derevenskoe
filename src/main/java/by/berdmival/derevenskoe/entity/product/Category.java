@@ -3,6 +3,7 @@ package by.berdmival.derevenskoe.entity.product;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -18,6 +19,6 @@ public class Category {
     private String title;
     private String description;
 
-    @OneToOne
-    private Category category;
+    @OneToMany
+    private List<Category> childCategories;
 }

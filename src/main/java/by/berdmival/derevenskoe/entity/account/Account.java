@@ -1,6 +1,7 @@
 package by.berdmival.derevenskoe.entity.account;
 
 import by.berdmival.derevenskoe.entity.order.Order;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
@@ -15,19 +16,19 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "user_id", unique = true)
-    private long userId;
-    private String firstName;
-    private String lastName;
-    private String patronymic;
-    private String phoneNumber;
-    private String email;
-    private String photoUri;
+    @JsonManagedReference
+    @OneToOne
+    @JoinColumn(name = "main_info_id", referencedColumnName = "id")
+    private UserMainInfo userMainInfo;
 
     @JsonManagedReference
-    @OneToMany(mappedBy = "account")
-    private List<DeliveryAddress> address;
+    @OneToOne
+    @JoinColumn(name = "contact_info_id", referencedColumnName = "id")
+    private ContactInfo contactInfo;
 
+    private String photoUri;
+
+    @JsonIgnore
     @OneToMany
     private List<Order> orders;
 }

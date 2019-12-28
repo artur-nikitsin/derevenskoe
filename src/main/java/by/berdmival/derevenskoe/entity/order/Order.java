@@ -1,7 +1,6 @@
 package by.berdmival.derevenskoe.entity.order;
 
-import by.berdmival.derevenskoe.entity.account.Account;
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import by.berdmival.derevenskoe.entity.account.UserMainInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
@@ -24,8 +23,8 @@ public class Order {
 
     @JsonManagedReference
     @ManyToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "user_id")
-    private Account userId;
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private UserMainInfo userId;
 
     @JsonManagedReference
     @OneToOne

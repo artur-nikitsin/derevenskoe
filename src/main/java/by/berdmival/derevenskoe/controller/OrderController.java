@@ -1,17 +1,16 @@
 package by.berdmival.derevenskoe.controller;
 
-import by.berdmival.derevenskoe.dto.OrderForm;
-import by.berdmival.derevenskoe.dto.OrderProductDto;
-import by.berdmival.derevenskoe.entity.account.Account;
+import by.berdmival.derevenskoe.entity.account.UserMainInfo;
 import by.berdmival.derevenskoe.entity.order.Order;
 import by.berdmival.derevenskoe.entity.order.OrderDetails;
+import by.berdmival.derevenskoe.entity.order.OrderForm;
+import by.berdmival.derevenskoe.entity.order.OrderProductDto;
 import by.berdmival.derevenskoe.service.order.OrderDetailsService;
 import by.berdmival.derevenskoe.service.order.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.security.Principal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,11 +32,11 @@ public class OrderController {
     }
 
     @PostMapping(path = "/orders")
-    public ResponseEntity<Order> addOrder(@RequestBody OrderForm form, Account account) {
+    public ResponseEntity<Order> addOrder(@RequestBody OrderForm form) {
         List<OrderProductDto> orderProductDtoList = form.getProducts();
 
         Order order = new Order();
-        orderService.addOrderForUser(order, account);
+        orderService.addOrderForUser(order, form.getInfo());
 
         List<OrderDetails> orderProducts = new ArrayList<>();
         for (OrderProductDto dto : orderProductDtoList) {
