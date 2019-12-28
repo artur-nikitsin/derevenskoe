@@ -1,5 +1,6 @@
 package by.berdmival.derevenskoe.service.order;
 
+import by.berdmival.derevenskoe.entity.account.Account;
 import by.berdmival.derevenskoe.entity.order.Order;
 
 import java.util.List;
@@ -7,9 +8,9 @@ import java.util.List;
 public interface OrderService {
     List<Order> getAll();
 
-    List<Order> getAllByUser(String username);
+    List<Order> getAllByUserId(Long userId);
 
-    Order addOrderForUser(Order order, String username);
+    Order addOrderForUser(Order order, Account account);
 
     Order update(Order order);
 

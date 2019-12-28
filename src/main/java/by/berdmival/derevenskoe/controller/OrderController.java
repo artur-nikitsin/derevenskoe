@@ -2,6 +2,7 @@ package by.berdmival.derevenskoe.controller;
 
 import by.berdmival.derevenskoe.dto.OrderForm;
 import by.berdmival.derevenskoe.dto.OrderProductDto;
+import by.berdmival.derevenskoe.entity.account.Account;
 import by.berdmival.derevenskoe.entity.order.Order;
 import by.berdmival.derevenskoe.entity.order.OrderDetails;
 import by.berdmival.derevenskoe.service.order.OrderDetailsService;
@@ -21,22 +22,22 @@ public class OrderController {
     @Autowired
     private OrderService orderService;
 
-    @GetMapping(path = "/orders/all")
+    @GetMapping(path = "/orders")
     public ResponseEntity<List<Order>> allOrders() {
         return ResponseEntity.ok(orderService.getAll());
     }
 
-    @GetMapping(path = "/orders")
-    public ResponseEntity<List<Order>> getCurrentUserOrders(Principal principal) {
-        return ResponseEntity.ok(orderService.getAllByUser(principal.getName()));
+    @GetMapping(path = "/orders/{userId}")
+    public ResponseEntity<List<Order>> getCurrentUserOrders(@PathVariable("userId") Long userId) {
+        return ResponseEntity.ok(orderService.getAllByUserId(userId));
     }
 
     @PostMapping(path = "/orders")
-    public ResponseEntity<Order> addOrder(@RequestBody OrderForm form, Principal principal) {
+    public ResponseEntity<Order> addOrder(@RequestBody OrderForm form, Account account) {
         List<OrderProductDto> orderProductDtoList = form.getProducts();
 
         Order order = new Order();
-        orderService.addOrderForUser(order, principal.getName());
+        orderService.addOrderForUser(order, account);
 
         List<OrderDetails> orderProducts = new ArrayList<>();
         for (OrderProductDto dto : orderProductDtoList) {
