@@ -22,9 +22,9 @@ public class Order {
     private String customerName;
     private LocalDateTime orderDateTime;
 
-    @JsonBackReference
+    @JsonManagedReference
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", referencedColumnName = "user_id")
     private Account userId;
 
     @JsonManagedReference

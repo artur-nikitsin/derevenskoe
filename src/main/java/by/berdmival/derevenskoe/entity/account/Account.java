@@ -28,7 +28,6 @@ public class Account {
     @OneToMany(mappedBy = "account")
     private List<DeliveryAddress> address;
 
-
     @OneToMany
     private List<Order> orders;
 }
