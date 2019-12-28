@@ -1,7 +1,7 @@
 # derevenskoe
 Store for Derevenskoe-Minsk
 
-# Back-end (Spring Boot monolit)
+# Back-end (Spring Boot monolith)
 Working deploy on Heroku: https://derevenskoe.herokuapp.com/ </br>
 Swagger docs for the REST API: https://derevenskoe.herokuapp.com/swagger-ui.html
 
