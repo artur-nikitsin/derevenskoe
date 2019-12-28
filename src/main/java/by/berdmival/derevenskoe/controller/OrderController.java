@@ -1,6 +1,5 @@
 package by.berdmival.derevenskoe.controller;
 
-import by.berdmival.derevenskoe.entity.account.UserMainInfo;
 import by.berdmival.derevenskoe.entity.order.Order;
 import by.berdmival.derevenskoe.entity.order.OrderDetails;
 import by.berdmival.derevenskoe.entity.order.OrderForm;
@@ -55,7 +54,7 @@ public class OrderController {
     }
 
     @GetMapping("/orders/{orderId}")
-    public ResponseEntity<Order> updateOrder(@PathVariable("orderId") Long orderId) {
+    public ResponseEntity<Order> getOrderById(@PathVariable("orderId") Long orderId) {
         return ResponseEntity.ok(orderService.getById(orderId));
     }
 
