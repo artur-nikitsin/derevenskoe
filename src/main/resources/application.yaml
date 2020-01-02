@@ -1,7 +1,10 @@
 server:
-  port: 5000
+  port: 7777
 spring:
   datasource:
+#    url: ${JDBC_DATABASE_URL:jdbc:postgresql://localhost:5432/derevenskoe}
+#    username: ${JDBC_DATABASE_USERNAME:lkVlrcWdB8RYo45C}
+#    password: ${JDBC_DATABASE_PASSWORD:ryRnFL4EMg3KfRabh12x}
     url: ${JDBC_DATABASE_URL:jdbc:postgresql://localhost:5432/derevenskoe}
     username: ${JDBC_DATABASE_USERNAME:postgres}
     password: ${JDBC_DATABASE_PASSWORD:password}
