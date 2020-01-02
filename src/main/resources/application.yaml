@@ -1,10 +1,10 @@
 server:
-  port: 80
+  port: 5000
 spring:
   datasource:
-    url: ${JDBC_DATABASE_URL:jdbc:postgresql:https//derevenskoe.cc9xj3w4j7hu.eu-west-3.rds.amazonaws.com:5432/derevenskoe}
-    username: ${JDBC_DATABASE_USERNAME:lkVlrcWdB8RYo45C}
-    password: ${JDBC_DATABASE_PASSWORD:ryRnFL4EMg3KfRabh12x}
+    url: ${JDBC_DATABASE_URL:jdbc:postgresql://localhost:5432/derevenskoe}
+    username: ${JDBC_DATABASE_USERNAME:postgres}
+    password: ${JDBC_DATABASE_PASSWORD:password}
   application:
     name: derevenskoe
   jpa:
