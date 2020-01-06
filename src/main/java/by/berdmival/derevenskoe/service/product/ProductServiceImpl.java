@@ -36,8 +36,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product findById(Long id) {
-        Optional<Product> searchResult = productRepository.findById(id);
-        return searchResult.orElseGet(Product::new);
+        return productRepository.findById(id).get();
     }
 
     @Override

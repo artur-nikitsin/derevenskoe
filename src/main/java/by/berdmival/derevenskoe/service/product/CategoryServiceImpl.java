@@ -23,7 +23,7 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public Category findById(Long categoryId) {
-        return categoryRepository.getOne(categoryId);
+        return categoryRepository.findById(categoryId).get();
     }
 
     @Override
@@ -38,7 +38,7 @@ public class CategoryServiceImpl implements CategoryService {
 
     @Override
     public Category getById(Long categoryId) {
-        return categoryRepository.getOne(categoryId);
+        return categoryRepository.findById(categoryId).get();
     }
 
     @Override

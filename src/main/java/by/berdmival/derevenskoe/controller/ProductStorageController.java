@@ -40,9 +40,9 @@ public class ProductStorageController {
 
     @ApiOperation(value = "Get product in the storage by it's id", response = Product.class)
     @GetMapping(path = "/products/{productId}")
-    public ResponseEntity<Product> getProductById(@PathVariable("productId") Long bookId) {
-        Product product = productService.findById(bookId);
-        if (product.getId() == bookId) {
+    public ResponseEntity<Product> getProductById(@PathVariable("productId") Long productId) {
+        Product product = productService.findById(productId);
+        if (product.getId() == productId) {
             return ResponseEntity.ok(product);
         } else {
             return ResponseEntity.notFound().build();
@@ -59,12 +59,6 @@ public class ProductStorageController {
     @DeleteMapping(path = "/products")
     public void deleteProduct(@RequestBody Product product) {
         productService.deleteOne(product);
-    }
-
-    @ApiOperation(value = "Get all products in the storage by category name", response = List.class)
-    @GetMapping(path = "/products/category/{categoryName}")
-    public ResponseEntity<List<Product>> findByCategoryName(@PathVariable("categoryName") String categoryName) {
-        return ResponseEntity.ok(productService.findByCategory(categoryService.findByName(categoryName)));
     }
 
     @ApiOperation(value = "Get all products in the storage by category id", response = List.class)
