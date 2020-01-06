@@ -62,13 +62,13 @@ public class ProductStorageController {
     }
 
     @ApiOperation(value = "Get all products in the storage by category name", response = List.class)
-    @GetMapping(path = "/products/{categoryName}")
+    @GetMapping(path = "/products/category/{categoryName}")
     public ResponseEntity<List<Product>> findByCategoryName(@PathVariable("categoryName") String categoryName) {
         return ResponseEntity.ok(productService.findByCategory(categoryService.findByName(categoryName)));
     }
 
     @ApiOperation(value = "Get all products in the storage by category id", response = List.class)
-    @GetMapping(path = "/products/{categoryId}")
+    @GetMapping(path = "/products/category/{categoryId}")
     public ResponseEntity<List<Product>> findByCategoryId(@PathVariable("categoryId") Long categoryId) {
         return ResponseEntity.ok(productService.findByCategory(categoryService.findById(categoryId)));
     }

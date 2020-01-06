@@ -19,6 +19,6 @@ public class Category {
     private String title;
     private String description;
 
-    @OneToMany
-    private List<Category> childCategories;
+    @ManyToOne
+    private Category parentCategory;
 }
