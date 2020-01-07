@@ -38,7 +38,7 @@ public class ProductStorageController {
     }
 
     @ApiOperation(value = "Load images for the product", response = Product.class)
-    @PostMapping(path = "/products/{productId}")
+    @PostMapping(path = "/products/{productId}/images")
     public ResponseEntity<Product> addPictures(@PathVariable("productId") Long productId,
                                                  @RequestParam("files") MultipartFile[] uploadFiles
     ) throws IOException {
