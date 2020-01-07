@@ -52,7 +52,7 @@
 //                        "/v2/api-docs",
 //                        "/resources/**",
 //                        "/static/**",
-//                        "/css/**", "/js/**", "/images/**",
+//                        "/css/**", "/js/**", "/img/**",
 //                        "/webjars/**");
 //    }
 //
