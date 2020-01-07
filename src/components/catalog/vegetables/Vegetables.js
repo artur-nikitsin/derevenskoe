@@ -14,14 +14,16 @@ class Vegetables extends Component {
         };
     }
 
+
     componentDidMount() {
 
         let jsonToState = (data) => {
             this.setState({products: data});
         };
 
+        let envUrl = process.env.PUBLIC_URL;
 
-        fetch(`/json/vegetables.json`)
+        fetch(envUrl + "/json/vegetables.json")
             .then(
                 res => {
                     if (res.status !== 200) {
@@ -51,7 +53,7 @@ class Vegetables extends Component {
                     description={item.description}
                     id={i}
                     name={item.name}
-                    picture={item.pictureUrl}
+                    picture={process.env.PUBLIC_URL + item.pictureUrl}
                 />
             ));
         }

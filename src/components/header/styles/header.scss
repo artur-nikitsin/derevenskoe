@@ -18,7 +18,7 @@
         justify-content: space-between;
         text-decoration: none;
         text-align: center;
-        font: 700 15px 'PT Sans', sans-serif;
+        font: 500 15px 'PT Sans', sans-serif;
         color: black;
 
 
@@ -28,7 +28,7 @@
       a:focus {
         display: flex;
         justify-content: space-between;
-        font: 700 15px 'PT Sans', sans-serif;
+        font: 500 15px 'PT Sans', sans-serif;
         color: #98d648;
         align-items: center;
         list-style-type: none;
@@ -37,7 +37,7 @@
       a.active {
         display: flex;
         justify-content: space-between;
-        font: 700 15px 'PT Sans', sans-serif;
+        font: 500 15px 'PT Sans', sans-serif;
         color: #ff7a2c;
         align-items: center;
         list-style-type: none;

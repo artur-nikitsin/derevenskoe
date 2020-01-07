@@ -31,6 +31,7 @@ class Catalog extends Component {
         return (
             <Container>
 
+                <Route exact path='/catalog' component={Vegetables}/>
                 <Route path='/catalog/vegetables' component={Vegetables}/>
                 <Route path='/catalog/zakatki' component={Zakatki}/>
                 <Route path='/catalog/jam' component={Jam}/>

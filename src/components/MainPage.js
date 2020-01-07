@@ -11,11 +11,9 @@ import Delivery from "./delivery/Delivery";
 import Contacts from "./contacts/Contacts";
 import Bucket from "./bucket/Busket"
 import Footer from "./footer/Footer";
-import CategoriesMenu from "./header/CategoriesMenu";
 import {
-    BrowserRouter,
-    Route,
-    Link, Switch
+    HashRouter,
+    Route
 } from "react-router-dom";
 import {createBrowserHistory} from "history";
 
@@ -34,7 +32,7 @@ class MainPage extends Component {
     render() {
 
         return (
-            <BrowserRouter history={history}>
+            <HashRouter  history={history}>
 
                 <Grid
                     container
@@ -48,14 +46,13 @@ class MainPage extends Component {
                         <Route path='/catalog' component={Catalog}/>
                         <Route path='/delivery' component={Delivery}/>
                         <Route path='/contacts' component={Contacts}/>
-                        <Route path='/search' component={Delivery}/>
+                        <Route path='/search' component={Bucket}/>
                         <Route path='/basket' component={Bucket}/>
                     </div>
                     <Footer/>
 
                 </Grid>
-
-            </BrowserRouter>
+            </HashRouter>
         )
     }
 }

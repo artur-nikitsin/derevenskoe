@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
-import Header from './components/header/Header'
+
 import MainPage from "./components/MainPage";
 import './styles/styles.scss'
 import 'reset-css'
