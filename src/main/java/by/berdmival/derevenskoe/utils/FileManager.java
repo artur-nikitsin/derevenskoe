@@ -40,7 +40,7 @@ public class FileManager {
             }
 
             String uuidFile = UUID.randomUUID().toString();
-            String resultFilename = uuidFile + "." + file.getOriginalFilename();
+            String resultFilename = uuidFile + "_" + file.getOriginalFilename();
             file.transferTo(new File(productImagesUploadDir.getAbsolutePath() + File.separator + resultFilename));
             product.getPictures().add(resultFilename);
         }
@@ -51,11 +51,11 @@ public class FileManager {
         File imageFile = new File(
                 getProductImagesUploadDir(product).getAbsolutePath() +
                         File.separator +
-                        imageName + ".jpg"
+                        imageName
         );
         if (imageFile.exists()) {
             if (imageFile.delete()) {
-                product.getPictures().remove(imageName + ".jpg");
+                product.getPictures().remove(imageName);
             }
         }
         return product;
