@@ -28,7 +28,7 @@ public class ProductCategoryController {
     @PutMapping("/categories/{categoryId}")
     public ResponseEntity<Category> updateCategory(@RequestBody Category category, @PathVariable("categoryId") Long categoryId) {
         category.setId(categoryId);
-        return ResponseEntity.ok(categoryService.save(category));
+        return ResponseEntity.ok(categoryService.update(category));
     }
 
     @GetMapping("/categories/{categoryId}")
