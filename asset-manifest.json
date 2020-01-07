@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/derevenskoe/static/css/main.514cc07e.chunk.css",
-    "main.js": "/derevenskoe/static/js/main.32297e44.chunk.js",
-    "main.js.map": "/derevenskoe/static/js/main.32297e44.chunk.js.map",
+    "main.js": "/derevenskoe/static/js/main.5201fe1a.chunk.js",
+    "main.js.map": "/derevenskoe/static/js/main.5201fe1a.chunk.js.map",
     "runtime-main.js": "/derevenskoe/static/js/runtime-main.5273cf60.js",
     "runtime-main.js.map": "/derevenskoe/static/js/runtime-main.5273cf60.js.map",
     "static/css/2.4c487673.chunk.css": "/derevenskoe/static/css/2.4c487673.chunk.css",
-    "static/js/2.2bdec7a2.chunk.js": "/derevenskoe/static/js/2.2bdec7a2.chunk.js",
-    "static/js/2.2bdec7a2.chunk.js.map": "/derevenskoe/static/js/2.2bdec7a2.chunk.js.map",
+    "static/js/2.e43edef4.chunk.js": "/derevenskoe/static/js/2.e43edef4.chunk.js",
+    "static/js/2.e43edef4.chunk.js.map": "/derevenskoe/static/js/2.e43edef4.chunk.js.map",
     "index.html": "/derevenskoe/index.html",
-    "precache-manifest.f7f195269d256b302988741d66257135.js": "/derevenskoe/precache-manifest.f7f195269d256b302988741d66257135.js",
+    "precache-manifest.8c39d14d2e2fc4665e7e7448bd4e2d39.js": "/derevenskoe/precache-manifest.8c39d14d2e2fc4665e7e7448bd4e2d39.js",
     "service-worker.js": "/derevenskoe/service-worker.js",
     "static/css/2.4c487673.chunk.css.map": "/derevenskoe/static/css/2.4c487673.chunk.css.map",
     "static/css/main.514cc07e.chunk.css.map": "/derevenskoe/static/css/main.514cc07e.chunk.css.map"
@@ -17,8 +17,8 @@
   "entrypoints": [
     "static/js/runtime-main.5273cf60.js",
     "static/css/2.4c487673.chunk.css",
-    "static/js/2.2bdec7a2.chunk.js",
+    "static/js/2.e43edef4.chunk.js",
     "static/css/main.514cc07e.chunk.css",
-    "static/js/main.32297e44.chunk.js"
+    "static/js/main.5201fe1a.chunk.js"
   ]
 }
