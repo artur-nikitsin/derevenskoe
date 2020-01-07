@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service("productService")
@@ -22,6 +23,7 @@ public class ProductServiceImpl implements ProductService {
     public Product save(Product product) {
         product.setEnabled(true);
         product.setAdvisable(true);
+        product.setPictures(new ArrayList<>());
         return productRepository.save(product);
     }
 

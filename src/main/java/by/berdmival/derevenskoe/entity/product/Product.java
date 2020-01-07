@@ -17,13 +17,15 @@ public class Product implements Serializable {
 
     private String name;
     private double price;
-    private String pictureUri;
     private double coefficient;
     private String description;
     private boolean advisable;
     private boolean enabled;
 
-    @OneToOne
+    @ElementCollection(targetClass = String.class)
+    private List<String> pictures;
+
+    @ManyToOne
     private Category category;
 
     @JsonIgnore

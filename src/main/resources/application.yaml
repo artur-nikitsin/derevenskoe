@@ -15,4 +15,4 @@ spring:
       max-file-size: 5MB
       max-request-size: 5MB
 upload:
-  path: classpath://uploads
+  path: uploads

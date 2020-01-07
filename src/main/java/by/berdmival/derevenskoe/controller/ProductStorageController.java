@@ -3,13 +3,15 @@ package by.berdmival.derevenskoe.controller;
 import by.berdmival.derevenskoe.entity.product.Product;
 import by.berdmival.derevenskoe.service.product.CategoryService;
 import by.berdmival.derevenskoe.service.product.ProductService;
+import by.berdmival.derevenskoe.utils.FileManager;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @Api(value = "Products management system")
@@ -20,8 +22,8 @@ public class ProductStorageController {
     @Autowired
     private CategoryService categoryService;
 
-    @Value("${upload.path}")
-    private String uploadPath;
+    @Autowired
+    private FileManager fileManager;
 
     @ApiOperation(value = "Get all products in the storage", response = List.class)
     @GetMapping(path = "/products")
@@ -35,10 +37,22 @@ public class ProductStorageController {
         return ResponseEntity.ok(productService.save(product));
     }
 
+    @ApiOperation(value = "Load images for the product", response = Product.class)
+    @PostMapping(path = "/products/{productId}")
+    public ResponseEntity<Product> addPictures(@PathVariable("productId") Long productId,
+                                                 @RequestParam("files") MultipartFile[] uploadFiles
+    ) throws IOException {
+        Product product = productService.findById(productId);
+
+        fileManager.uploadProductImage(product, uploadFiles);
+
+        return ResponseEntity.ok(productService.update(product));
+    }
+
     @ApiOperation(value = "Update product in the storage", response = Product.class)
     @PutMapping(path = "/products/{productId}")
-    public ResponseEntity<Product> updateProduct(@RequestBody Product product, @PathVariable("productId") Long bookId) {
-        product.setId(bookId);
+    public ResponseEntity<Product> updateProduct(@RequestBody Product product, @PathVariable("productId") Long productId) {
+        product.setId(productId);
         return ResponseEntity.ok(productService.update(product));
     }
 
@@ -55,8 +69,8 @@ public class ProductStorageController {
 
     @ApiOperation(value = "Delete product in the storage by it's id", response = void.class)
     @DeleteMapping(path = "/products/{productId}")
-    public void deleteProductById(@PathVariable("productId") Long bookId) {
-        productService.deleteOneById(bookId);
+    public void deleteProductById(@PathVariable("productId") Long productId) {
+        productService.deleteOneById(productId);
     }
 
     @ApiOperation(value = "Delete product in the storage by it's json", response = void.class)
