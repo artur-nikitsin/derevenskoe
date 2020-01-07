@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "./static/css/main.514cc07e.chunk.css",
-    "main.js": "./static/js/main.41247de3.chunk.js",
-    "main.js.map": "./static/js/main.41247de3.chunk.js.map",
-    "runtime-main.js": "./static/js/runtime-main.1cefffb6.js",
-    "runtime-main.js.map": "./static/js/runtime-main.1cefffb6.js.map",
-    "static/css/2.4c487673.chunk.css": "./static/css/2.4c487673.chunk.css",
-    "static/js/2.e43edef4.chunk.js": "./static/js/2.e43edef4.chunk.js",
-    "static/js/2.e43edef4.chunk.js.map": "./static/js/2.e43edef4.chunk.js.map",
-    "index.html": "./index.html",
-    "precache-manifest.c5dcda81071d2119d5a053baee94034c.js": "./precache-manifest.c5dcda81071d2119d5a053baee94034c.js",
-    "service-worker.js": "./service-worker.js",
-    "static/css/2.4c487673.chunk.css.map": "./static/css/2.4c487673.chunk.css.map",
-    "static/css/main.514cc07e.chunk.css.map": "./static/css/main.514cc07e.chunk.css.map"
+    "main.css": "berdmival.github.io/derevenskoe/static/css/main.514cc07e.chunk.css",
+    "main.js": "berdmival.github.io/derevenskoe/static/js/main.25449d9b.chunk.js",
+    "main.js.map": "berdmival.github.io/derevenskoe/static/js/main.25449d9b.chunk.js.map",
+    "runtime-main.js": "berdmival.github.io/derevenskoe/static/js/runtime-main.165734ec.js",
+    "runtime-main.js.map": "berdmival.github.io/derevenskoe/static/js/runtime-main.165734ec.js.map",
+    "static/css/2.4c487673.chunk.css": "berdmival.github.io/derevenskoe/static/css/2.4c487673.chunk.css",
+    "static/js/2.e43edef4.chunk.js": "berdmival.github.io/derevenskoe/static/js/2.e43edef4.chunk.js",
+    "static/js/2.e43edef4.chunk.js.map": "berdmival.github.io/derevenskoe/static/js/2.e43edef4.chunk.js.map",
+    "index.html": "berdmival.github.io/derevenskoe/index.html",
+    "precache-manifest.63d056ee9385250e063057701aa389c2.js": "berdmival.github.io/derevenskoe/precache-manifest.63d056ee9385250e063057701aa389c2.js",
+    "service-worker.js": "berdmival.github.io/derevenskoe/service-worker.js",
+    "static/css/2.4c487673.chunk.css.map": "berdmival.github.io/derevenskoe/static/css/2.4c487673.chunk.css.map",
+    "static/css/main.514cc07e.chunk.css.map": "berdmival.github.io/derevenskoe/static/css/main.514cc07e.chunk.css.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.1cefffb6.js",
+    "static/js/runtime-main.165734ec.js",
     "static/css/2.4c487673.chunk.css",
     "static/js/2.e43edef4.chunk.js",
     "static/css/main.514cc07e.chunk.css",
-    "static/js/main.41247de3.chunk.js"
+    "static/js/main.25449d9b.chunk.js"
   ]
 }
