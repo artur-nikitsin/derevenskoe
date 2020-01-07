@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "berdmival.github.io/derevenskoe/static/css/main.f92cd3a7.chunk.css",
-    "main.js": "berdmival.github.io/derevenskoe/static/js/main.1933f61e.chunk.js",
-    "main.js.map": "berdmival.github.io/derevenskoe/static/js/main.1933f61e.chunk.js.map",
+    "main.css": "berdmival.github.io/derevenskoe/static/css/main.514cc07e.chunk.css",
+    "main.js": "berdmival.github.io/derevenskoe/static/js/main.2c958b1f.chunk.js",
+    "main.js.map": "berdmival.github.io/derevenskoe/static/js/main.2c958b1f.chunk.js.map",
     "runtime-main.js": "berdmival.github.io/derevenskoe/static/js/runtime-main.165734ec.js",
     "runtime-main.js.map": "berdmival.github.io/derevenskoe/static/js/runtime-main.165734ec.js.map",
     "static/css/2.4c487673.chunk.css": "berdmival.github.io/derevenskoe/static/css/2.4c487673.chunk.css",
-    "static/js/2.2bdec7a2.chunk.js": "berdmival.github.io/derevenskoe/static/js/2.2bdec7a2.chunk.js",
-    "static/js/2.2bdec7a2.chunk.js.map": "berdmival.github.io/derevenskoe/static/js/2.2bdec7a2.chunk.js.map",
+    "static/js/2.e43edef4.chunk.js": "berdmival.github.io/derevenskoe/static/js/2.e43edef4.chunk.js",
+    "static/js/2.e43edef4.chunk.js.map": "berdmival.github.io/derevenskoe/static/js/2.e43edef4.chunk.js.map",
     "index.html": "berdmival.github.io/derevenskoe/index.html",
-    "precache-manifest.da0d85bc450c234e43849d6623cf8805.js": "berdmival.github.io/derevenskoe/precache-manifest.da0d85bc450c234e43849d6623cf8805.js",
+    "precache-manifest.49f2ea733e3800b2e9d7f1146542b3a3.js": "berdmival.github.io/derevenskoe/precache-manifest.49f2ea733e3800b2e9d7f1146542b3a3.js",
     "service-worker.js": "berdmival.github.io/derevenskoe/service-worker.js",
     "static/css/2.4c487673.chunk.css.map": "berdmival.github.io/derevenskoe/static/css/2.4c487673.chunk.css.map",
-    "static/css/main.f92cd3a7.chunk.css.map": "berdmival.github.io/derevenskoe/static/css/main.f92cd3a7.chunk.css.map"
+    "static/css/main.514cc07e.chunk.css.map": "berdmival.github.io/derevenskoe/static/css/main.514cc07e.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.165734ec.js",
     "static/css/2.4c487673.chunk.css",
-    "static/js/2.2bdec7a2.chunk.js",
-    "static/css/main.f92cd3a7.chunk.css",
-    "static/js/main.1933f61e.chunk.js"
+    "static/js/2.e43edef4.chunk.js",
+    "static/css/main.514cc07e.chunk.css",
+    "static/js/main.2c958b1f.chunk.js"
   ]
 }
