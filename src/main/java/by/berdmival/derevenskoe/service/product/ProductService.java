@@ -6,7 +6,9 @@ import by.berdmival.derevenskoe.entity.product.Product;
 import java.util.List;
 
 public interface ProductService {
-    Product saveOne(Product product);
+    Product save(Product product);
+
+    Product update(Product product);
 
     List<Product> saveSeveral(List<Product> products);
 

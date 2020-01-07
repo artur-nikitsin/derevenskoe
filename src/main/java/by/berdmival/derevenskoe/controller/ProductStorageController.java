@@ -6,6 +6,7 @@ import by.berdmival.derevenskoe.service.product.ProductService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,6 +20,9 @@ public class ProductStorageController {
     @Autowired
     private CategoryService categoryService;
 
+    @Value("${upload.path}")
+    private String uploadPath;
+
     @ApiOperation(value = "Get all products in the storage", response = List.class)
     @GetMapping(path = "/products")
     public ResponseEntity<List<Product>> getAllProducts() {
@@ -28,14 +32,14 @@ public class ProductStorageController {
     @ApiOperation(value = "Add new product in the storage", response = Product.class)
     @PostMapping(path = "/products")
     public ResponseEntity<Product> createProduct(@RequestBody Product product) {
-        return ResponseEntity.ok(productService.saveOne(product));
+        return ResponseEntity.ok(productService.save(product));
     }
 
     @ApiOperation(value = "Update product in the storage", response = Product.class)
     @PutMapping(path = "/products/{productId}")
     public ResponseEntity<Product> updateProduct(@RequestBody Product product, @PathVariable("productId") Long bookId) {
         product.setId(bookId);
-        return ResponseEntity.ok(productService.saveOne(product));
+        return ResponseEntity.ok(productService.update(product));
     }
 
     @ApiOperation(value = "Get product in the storage by it's id", response = Product.class)
