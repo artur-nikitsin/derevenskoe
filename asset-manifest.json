@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "berdmival.github.io/derevenskoe/static/css/main.514cc07e.chunk.css",
-    "main.js": "berdmival.github.io/derevenskoe/static/js/main.2c958b1f.chunk.js",
-    "main.js.map": "berdmival.github.io/derevenskoe/static/js/main.2c958b1f.chunk.js.map",
+    "main.js": "berdmival.github.io/derevenskoe/static/js/main.a8ef981c.chunk.js",
+    "main.js.map": "berdmival.github.io/derevenskoe/static/js/main.a8ef981c.chunk.js.map",
     "runtime-main.js": "berdmival.github.io/derevenskoe/static/js/runtime-main.165734ec.js",
     "runtime-main.js.map": "berdmival.github.io/derevenskoe/static/js/runtime-main.165734ec.js.map",
     "static/css/2.4c487673.chunk.css": "berdmival.github.io/derevenskoe/static/css/2.4c487673.chunk.css",
     "static/js/2.e43edef4.chunk.js": "berdmival.github.io/derevenskoe/static/js/2.e43edef4.chunk.js",
     "static/js/2.e43edef4.chunk.js.map": "berdmival.github.io/derevenskoe/static/js/2.e43edef4.chunk.js.map",
     "index.html": "berdmival.github.io/derevenskoe/index.html",
-    "precache-manifest.49f2ea733e3800b2e9d7f1146542b3a3.js": "berdmival.github.io/derevenskoe/precache-manifest.49f2ea733e3800b2e9d7f1146542b3a3.js",
+    "precache-manifest.909156a97ad4659709f90803551395df.js": "berdmival.github.io/derevenskoe/precache-manifest.909156a97ad4659709f90803551395df.js",
     "service-worker.js": "berdmival.github.io/derevenskoe/service-worker.js",
     "static/css/2.4c487673.chunk.css.map": "berdmival.github.io/derevenskoe/static/css/2.4c487673.chunk.css.map",
     "static/css/main.514cc07e.chunk.css.map": "berdmival.github.io/derevenskoe/static/css/main.514cc07e.chunk.css.map"
@@ -19,6 +19,6 @@
     "static/css/2.4c487673.chunk.css",
     "static/js/2.e43edef4.chunk.js",
     "static/css/main.514cc07e.chunk.css",
-    "static/js/main.2c958b1f.chunk.js"
+    "static/js/main.a8ef981c.chunk.js"
   ]
 }
