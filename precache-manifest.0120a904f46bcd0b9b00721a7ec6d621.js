@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "9064317f513e4efa8ba242ab8df711d6",
+    "revision": "f9b6f9e3e4dcc19e99963f8bfa594c0f",
     "url": "/derevenskoe/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/derevenskoe/static/css/2.4c487673.chunk.css"
   },
   {
-    "revision": "0835f97a19706f48f530",
+    "revision": "ceb49ce43901ce127e72",
     "url": "/derevenskoe/static/css/main.514cc07e.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/derevenskoe/static/js/2.2bdec7a2.chunk.js"
   },
   {
-    "revision": "0835f97a19706f48f530",
-    "url": "/derevenskoe/static/js/main.b283ad5a.chunk.js"
+    "revision": "ceb49ce43901ce127e72",
+    "url": "/derevenskoe/static/js/main.7a3cf33c.chunk.js"
   },
   {
     "revision": "1b86c8048e7247b2840b",
