@@ -40,13 +40,31 @@ public class ProductStorageController {
     @ApiOperation(value = "Load images for the product", response = Product.class)
     @PostMapping(path = "/products/{productId}/images")
     public ResponseEntity<Product> addPictures(@PathVariable("productId") Long productId,
-                                                 @RequestParam("files") MultipartFile[] uploadFiles
+                                               @RequestParam("files") MultipartFile[] uploadFiles
     ) throws IOException {
-        Product product = productService.findById(productId);
+        return ResponseEntity.ok(
+                productService.update(
+                        fileManager.uploadProductImage(
+                                productService.findById(productId),
+                                uploadFiles
+                        )
+                )
+        );
+    }
 
-        fileManager.uploadProductImage(product, uploadFiles);
-
-        return ResponseEntity.ok(productService.update(product));
+    @ApiOperation(value = "Delete the image of the product", response = Product.class)
+    @DeleteMapping(path = "/products/{productId}/images/{imageName}")
+    public ResponseEntity<Product> deletePictures(@PathVariable("productId") Long productId,
+                                                  @PathVariable("imageName") String imageName
+    ) {
+        return ResponseEntity.ok(
+                productService.update(
+                        fileManager.deleteProductImage(
+                                productService.findById(productId),
+                                imageName
+                        )
+                )
+        );
     }
 
     @ApiOperation(value = "Update product in the storage", response = Product.class)

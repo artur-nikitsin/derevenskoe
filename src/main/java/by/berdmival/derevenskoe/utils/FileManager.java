@@ -2,13 +2,10 @@ package by.berdmival.derevenskoe.utils;
 
 import by.berdmival.derevenskoe.entity.product.Product;
 import lombok.Data;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -23,12 +20,16 @@ public class FileManager {
         }
     }
 
-    public List<String> uploadProductImage(Product product, MultipartFile[] files) throws IOException {
-        File productImagesUploadDir = new File(
+    private File getProductImagesUploadDir(Product product) {
+        return new File(
                 this.uploadPath
-                .concat(File.separator)
-                .concat(Long.toString(product.getId()))
+                        .concat(File.separator)
+                        .concat(Long.toString(product.getId()))
         );
+    }
+
+    public Product uploadProductImage(Product product, MultipartFile[] files) throws IOException {
+        File productImagesUploadDir = getProductImagesUploadDir(product);
         if (!productImagesUploadDir.exists()) {
             productImagesUploadDir.mkdir();
         }
@@ -43,6 +44,20 @@ public class FileManager {
             file.transferTo(new File(productImagesUploadDir.getAbsolutePath() + File.separator + resultFilename));
             product.getPictures().add(resultFilename);
         }
-        return product.getPictures();
+        return product;
+    }
+
+    public Product deleteProductImage(Product product, String imageName) {
+        File imageFile = new File(
+                getProductImagesUploadDir(product).getAbsolutePath() +
+                        File.separator +
+                        imageName + ".jpg"
+        );
+        if (imageFile.exists()) {
+            if (imageFile.delete()) {
+                product.getPictures().remove(imageName + ".jpg");
+            }
+        }
+        return product;
     }
 }
