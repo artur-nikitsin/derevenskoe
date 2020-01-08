@@ -24,38 +24,78 @@ class HeaderMenu extends Component {
         const currentPage = this.props.currentPage;
 
         return (
+
             <div className={"HeaderMenu"}>
-                <Container className={"container"}>
 
-                    <nav className="navbar navbar-expand-lg navbar-light bg-light">
 
-                        <button className="navbar-toggler" type="button" data-toggle="collapse"
-                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                                aria-expanded="false" aria-label="Toggle navigation">
-                            <span className="navbar-toggler-icon"></span>
+                <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                    <a className="navbar-brand" href="#">Деревенские продукты</a>
+                    <button className="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
+                    </button>
 
-                        </button>
+                    <Container className={"container"}>
 
 
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
 
                             <ul className="navbar-nav mr-auto">
 
-                                <li className="nav-item active">
+                                <li className="nav-item">
                                     <NavLink to="/" exact activeClassName='active'> ГЛАВНАЯ </NavLink>
                                 </li>
 
                                 <li className="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <NavLink to="/catalog" activeClassName='active' className=" dropdown-toggle"
+                                             id="navbarDropdown" role="button"
+                                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         КАТАЛОГ
-                                    </a>
+                                    </NavLink>
+
                                     <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a className="dropdown-item" href="#">Action</a>
-                                        <a className="dropdown-item" href="#">Another action</a>
+                                        <NavLink to="/catalog/vegetables" className="dropdown-item"
+                                                 activeClassName='active'
+                                        >Овощи</NavLink>
                                         <div className="dropdown-divider"></div>
-                                        <a className="dropdown-item" href="#">Something else here</a>
+                                        <NavLink to="/catalog/zakatki" className="dropdown-item"
+                                                 activeClassName='active'>Закатки</NavLink>
+                                        <div className="dropdown-divider"></div>
+                                        <NavLink to="/catalog/jam" className="dropdown-item"
+                                                 activeClassName='active'>Варенье</NavLink>
+                                        <div className="dropdown-divider"></div>
+                                        <NavLink to="/catalog/dumplings" className="dropdown-item"
+                                                 activeClassName='active'>Пельмени и
+                                            вареники</NavLink>
+                                        <div className="dropdown-divider"></div>
+                                        <NavLink to="/catalog/milk_products" className="dropdown-item"
+                                                 activeClassName='active'>Молочные
+                                            продукты</NavLink>
+                                        <div className="dropdown-divider"></div>
+                                        <NavLink to="/catalog/bread" className="dropdown-item"
+                                                 activeClassName='active'>Хлеб</NavLink>
+                                        <div className="dropdown-divider"></div>
+                                        <NavLink to="/catalog/meat" className="dropdown-item"
+                                                 activeClassName='active'>Мясо</NavLink>
+                                        <div className="dropdown-divider"></div>
+                                        <NavLink to="/catalog/eggs_honey" className="dropdown-item"
+                                                 activeClassName='active'>Яйца и
+                                            мед</NavLink>
+                                        <div className="dropdown-divider"></div>
+                                        <NavLink to="/catalog/oils" className="dropdown-item" activeClassName='active'>Растительные
+                                            масла и
+                                            урбеч</NavLink>
+                                        <div className="dropdown-divider"></div>
+                                        <NavLink to="/catalog/tea" className="dropdown-item" activeClassName='active'>Травяной
+                                            чай</NavLink>
+                                        <div className="dropdown-divider"></div>
+                                        <NavLink to="/catalog/other" className="dropdown-item"
+                                                 activeClassName='active'>Разное</NavLink>
+
+
                                     </div>
+
                                 </li>
 
                                 <li className="nav-item">
@@ -75,28 +115,33 @@ class HeaderMenu extends Component {
 
 
                             <form className="form-inline my-2 my-lg-0">
-                                <input className="form-control mr-sm-2" type="search" placeholder="Search"
+                                <input className="form-control mr-sm-2" type="search" placeholder="Найти товар..."
                                        aria-label="Search"/>
-                                <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search
+                                <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Поиск
                                 </button>
                             </form>
                         </div>
-                    </nav>
+                    </Container>
+                </nav>
 
 
-                    <ul>
 
-                        {/*  react router*/}
-                        {/*   <li><NavLink to="/" exact activeClassName='active'> ГЛАВНАЯ </NavLink></li>
+
+
+{/*
+                <ul>
+
+                      react router
+                       <li><NavLink to="/" exact activeClassName='active'> ГЛАВНАЯ </NavLink></li>
                         <li><NavLink to="/catalog" activeClassName='active'> КАТАЛОГ </NavLink></li>
                         <li><NavLink to="/delivery" exact activeClassName='active'> ДОСТАВКА </NavLink></li>
                         <li><NavLink to="/contacts" exact activeClassName='active'> КОНТАКТЫ </NavLink></li>
                         <li><SearchIcon/> <NavLink to="/search" exact activeClassName='active'> ПОИСК </NavLink></li>
                         <li><ShoppingCartIcon/> <NavLink to="/basket" exact activeClassName='active'> КОРЗИНА </NavLink>
-                        </li>*/}
-                        {/*  react router*/}
+                        </li>
+                      react router
 
-                        {/*
+
                         <li className={currentPage === 'main' ? 'active' : ''}>
                             <a href="" onClick={(e) =>
                                 this.changePage('main', e)}>ГЛАВНАЯ</a>
@@ -130,9 +175,9 @@ class HeaderMenu extends Component {
                         <li className={currentPage === 'basket' ? 'active' : ''}>
                             <a href="" onClick={(e) =>
                                 this.changePage('basket', e)}>КОРЗИНА</a>
-                        </li>*/}
-                    </ul>
-                </Container>
+                        </li>
+                </ul>*/}
+
             </div>
         );
     }
