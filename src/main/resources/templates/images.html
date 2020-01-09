@@ -5,6 +5,9 @@
     <title>Title</title>
 </head>
 <body>
-<div><img th:src="@{${src}}"></div>
+<div th:text="${id}"></div>
+<div th:text="${img}"></div>
+<div><img th:src="@{${baseUrl}}"
+          th:with="baseUrl='/img/'+${id}+'/'+${img}"></div>
 </body>
 </html>
