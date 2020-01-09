@@ -8,6 +8,8 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import java.io.File;
+
 @Configuration
 //@EnableWebMvc
 public class MvcConfiguration implements WebMvcConfigurer {
@@ -19,12 +21,12 @@ public class MvcConfiguration implements WebMvcConfigurer {
         return new FileManager(uploadPath);
     }
 
-//    @Override
-//    public void addResourceHandlers(ResourceHandlerRegistry registry) {
-//        registry.addResourceHandler("/img/**")
-//                .addResourceLocations("/" + uploadPath + "/");
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/img/**")
+                .addResourceLocations(new File(uploadPath).getAbsolutePath() + File.separator);
 //        registry.addResourceHandler("/static/**")
 //                .addResourceLocations("classpath:/static/");
-//    }
+    }
 }
 
