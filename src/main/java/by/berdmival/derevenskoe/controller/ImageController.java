@@ -20,7 +20,7 @@ public class ImageController {
     private String uploadPath;
 
     @GetMapping("/testimg/{id}/{img}")
-    public ModelAndView getImages(ModelAndView modelAndView, @PathVariable String img, @PathVariable String id) {
+    public ModelAndView testImage(ModelAndView modelAndView, @PathVariable String img, @PathVariable String id) {
         modelAndView.addObject("id", id);
         modelAndView.addObject("img", img);
         modelAndView.setViewName("images.html");

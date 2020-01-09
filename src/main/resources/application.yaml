@@ -9,7 +9,7 @@ spring:
     name: derevenskoe
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
   servlet:
     multipart:
       max-file-size: 5MB
