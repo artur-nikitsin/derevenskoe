@@ -72,6 +72,7 @@ public class ProductStorageController {
     @ApiOperation(value = "Update product in the storage", response = Product.class)
     @PutMapping(path = "/products/{productId}")
     public ResponseEntity<Product> updateProduct(@RequestBody Product product, @PathVariable("productId") Long productId) {
+        productService.findById(productId);
         product.setId(productId);
         return ResponseEntity.ok(productService.update(product));
     }
@@ -79,24 +80,14 @@ public class ProductStorageController {
     @ApiOperation(value = "Get product in the storage by it's id", response = Product.class)
     @GetMapping(path = "/products/{productId}")
     public ResponseEntity<Product> getProductById(@PathVariable("productId") Long productId) {
-        Product product = productService.findById(productId);
-        if (product.getId() == productId) {
-            return ResponseEntity.ok(product);
-        } else {
-            return ResponseEntity.notFound().build();
-        }
+        return ResponseEntity.ok(productService.findById(productId));
     }
 
     @ApiOperation(value = "Delete product in the storage by it's id", response = void.class)
     @DeleteMapping(path = "/products/{productId}")
     public void deleteProductById(@PathVariable("productId") Long productId) {
+        productService.findById(productId);
         productService.deleteOneById(productId);
-    }
-
-    @ApiOperation(value = "Delete product in the storage by it's json", response = void.class)
-    @DeleteMapping(path = "/products")
-    public void deleteProduct(@RequestBody Product product) {
-        productService.deleteOne(product);
     }
 
     @ApiOperation(value = "Get all products in the storage by category id", response = List.class)

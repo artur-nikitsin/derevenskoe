@@ -2,6 +2,7 @@ package by.berdmival.derevenskoe.service.product;
 
 import by.berdmival.derevenskoe.entity.product.Category;
 import by.berdmival.derevenskoe.entity.product.Product;
+import by.berdmival.derevenskoe.exception.product.ProductNotFoundByIdException;
 import by.berdmival.derevenskoe.repository.product.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -11,7 +12,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
-import java.util.List;
 
 @Service("productService")
 @Repository
@@ -38,23 +38,13 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> saveSeveral(List<Product> products) {
-        return productRepository.saveAll(products);
-    }
-
-    @Override
     public Page<Product> findAll(Pageable pageable) {
         return productRepository.findAll(pageable);
     }
 
     @Override
     public Product findById(Long id) {
-        return productRepository.findById(id).get();
-    }
-
-    @Override
-    public void deleteOne(Product product) {
-        productRepository.delete(product);
+        return productRepository.findById(id).orElseThrow(() -> new ProductNotFoundByIdException(id));
     }
 
     @Override
