@@ -4,7 +4,7 @@ import {currentPageAction} from '../../actions/currentPageAction'
 import {Container} from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import "./styles/header.scss"
+import "./styles/headerMenu.scss"
 import {Link, NavLink} from "react-router-dom";
 
 
@@ -26,17 +26,15 @@ class HeaderMenu extends Component {
         return (
 
             <div className={"HeaderMenu"}>
+                <Container className={"container"}>
 
-
-                <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                    <a className="navbar-brand" href="#">Деревенские продукты</a>
-                    <button className="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
-
-                    <Container className={"container"}>
+                    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                        <a className="navbar-brand" href="#">Деревенские продукты</a>
+                        <button className="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <span className="navbar-toggler-icon"></span>
+                        </button>
 
 
                         <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -121,14 +119,13 @@ class HeaderMenu extends Component {
                                 </button>
                             </form>
                         </div>
-                    </Container>
-                </nav>
+
+                    </nav>
+
+                </Container>
 
 
-
-
-
-{/*
+                {/*
                 <ul>
 
                       react router

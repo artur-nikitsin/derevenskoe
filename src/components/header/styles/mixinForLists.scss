@@ -1,0 +1,51 @@
+@mixin reset-list {
+  ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+
+    li {
+      display: flex;
+      justify-content: flex-start;
+      height: 30px;
+      padding: 0 5px 0 5px;
+      align-items: center;
+      list-style-type: none;
+
+      a {
+        display: flex;
+        justify-content: space-between;
+        text-decoration: none;
+        text-align: center;
+        font: 500 15px 'PT Sans', sans-serif;
+        color: black;
+        align-items: center;
+        list-style-type: none;
+
+
+      }
+
+      a:hover,
+      a:focus {
+        display: flex;
+        justify-content: space-between;
+        font: 500 15px 'PT Sans', sans-serif;
+        color: #98d648;
+        align-items: center;
+        list-style-type: none;
+      }
+
+      a.active {
+        display: flex;
+        justify-content: space-between;
+        font: 500 15px 'PT Sans', sans-serif;
+        color: #ff7a2c;
+        align-items: center;
+        list-style-type: none;
+      }
+    }
+
+
+  }
+}

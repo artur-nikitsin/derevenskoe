@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import HeaderTop from "./HeaderTop";
 import HeaderMenu from "./HeaderMenu";
 import CategoriesMenu from "./CategoriesMenu";
-
 import "./styles/header.scss"
 
 class Header extends Component {

@@ -1,0 +1,6 @@
+@import  "./mixinForLists.scss";
+
+.CategoriesMenu {
+  background: #f3f0eb;
+  @include reset-list
+}

@@ -1,0 +1,7 @@
+@import  "./mixinForLists.scss";
+
+  .HeaderMenu {
+    @include reset-list;
+    background: #f8f9fa;
+  }
+
