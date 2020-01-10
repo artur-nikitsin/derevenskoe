@@ -1,11 +1,9 @@
 
 .container {
-
 }
 
 .slick-slider {
-  margin-left: 30px;
-  /*border: 1px solid red;*/
+  border: 1px solid red;
 }
 
 
@@ -39,4 +37,8 @@
 .slick-prev:focus,
 .slick-prev:hover {
   color: #98d648;
+}
+
+.slick-track {
+  min-width: 200px;
 }
