@@ -27,17 +27,19 @@ public class ProductCategoryController {
 
     @PutMapping("/categories/{categoryId}")
     public ResponseEntity<Category> updateCategory(@RequestBody Category category, @PathVariable("categoryId") Long categoryId) {
+        categoryService.findById(categoryId);
         category.setId(categoryId);
         return ResponseEntity.ok(categoryService.update(category));
     }
 
     @GetMapping("/categories/{categoryId}")
     public ResponseEntity<Category> getCategoryById(@PathVariable("categoryId") Long categoryId) {
-        return ResponseEntity.ok(categoryService.getById(categoryId));
+        return ResponseEntity.ok(categoryService.findById(categoryId));
     }
 
     @DeleteMapping("/categories/{categoryId}")
     public void deleteCategory(@PathVariable("categoryId") Long categoryId) {
+        categoryService.findById(categoryId);
         categoryService.deleteById(categoryId);
     }
 }
