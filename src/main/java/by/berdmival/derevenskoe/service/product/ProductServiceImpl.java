@@ -4,6 +4,8 @@ import by.berdmival.derevenskoe.entity.product.Category;
 import by.berdmival.derevenskoe.entity.product.Product;
 import by.berdmival.derevenskoe.repository.product.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -38,8 +40,8 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> findAll() {
-        return productRepository.findAll();
+    public Page<Product> findAll(Pageable pageable) {
+        return productRepository.findAll(pageable);
     }
 
     @Override
@@ -58,7 +60,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public List<Product> findByCategory(Category category) {
-        return productRepository.findAllByCategory(category);
+    public Page<Product> findByCategory(Category category, Pageable pageable) {
+        return productRepository.findAllByCategory(category, pageable);
     }
 }

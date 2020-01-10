@@ -7,6 +7,8 @@ import by.berdmival.derevenskoe.utils.FileManager;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -27,8 +29,8 @@ public class ProductStorageController {
 
     @ApiOperation(value = "Get all products in the storage", response = List.class)
     @GetMapping(path = "/products")
-    public ResponseEntity<List<Product>> getAllProducts() {
-        return ResponseEntity.ok(productService.findAll());
+    public ResponseEntity<Page<Product>> getAllProducts(Pageable pageable) {
+        return ResponseEntity.ok(productService.findAll(pageable));
     }
 
     @ApiOperation(value = "Add new product in the storage", response = Product.class)
@@ -99,7 +101,10 @@ public class ProductStorageController {
 
     @ApiOperation(value = "Get all products in the storage by category id", response = List.class)
     @GetMapping(path = "/products/category/{categoryId}")
-    public ResponseEntity<List<Product>> findByCategoryId(@PathVariable("categoryId") Long categoryId) {
-        return ResponseEntity.ok(productService.findByCategory(categoryService.findById(categoryId)));
+    public ResponseEntity<Page<Product>> findByCategoryId(
+            @PathVariable("categoryId") Long categoryId,
+            Pageable pageable
+    ) {
+        return ResponseEntity.ok(productService.findByCategory(categoryService.findById(categoryId), pageable));
     }
 }

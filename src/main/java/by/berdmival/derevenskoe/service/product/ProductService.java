@@ -2,6 +2,8 @@ package by.berdmival.derevenskoe.service.product;
 
 import by.berdmival.derevenskoe.entity.product.Category;
 import by.berdmival.derevenskoe.entity.product.Product;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
@@ -12,7 +14,7 @@ public interface ProductService {
 
     List<Product> saveSeveral(List<Product> products);
 
-    List<Product> findAll();
+    Page<Product> findAll(Pageable pageable);
 
     Product findById(Long id);
 
@@ -20,5 +22,5 @@ public interface ProductService {
 
     void deleteOneById(Long id);
 
-    List<Product> findByCategory(Category category);
+    Page<Product> findByCategory(Category category, Pageable pageable);
 }
