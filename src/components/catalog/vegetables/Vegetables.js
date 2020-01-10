@@ -65,9 +65,8 @@ class Vegetables extends Component {
                     container
                     direction="row"
                     justify="space-between"
-                    alignItems="space-around"
+                    alignItems="space-around">
 
-                >
                     {productsToPage}
 
                 </Grid>

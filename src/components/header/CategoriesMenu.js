@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import {Container} from '@material-ui/core';
 import "./styles/categoriesMenu.scss"
 import {Link, NavLink} from "react-router-dom";
+import Grid from '@material-ui/core/Grid';
+
+
 
 class CategoriesMenu extends Component {
     render() {
@@ -9,6 +12,11 @@ class CategoriesMenu extends Component {
             <div className={"CategoriesMenu"}>
                 <Container className={"container"}>
                     <ul>
+                        <Grid container
+                              direction="row"
+                              justify="space-between"
+                              alignItems="flex-start">
+
                         <li><NavLink to="/catalog/vegetables" activeClassName='active'>Овощи</NavLink></li>
                         <li><NavLink to="/catalog/zakatki" activeClassName='active'>Закатки</NavLink></li>
                         <li><NavLink to="/catalog/jam" activeClassName='active'>Варенье</NavLink></li>
@@ -26,6 +34,9 @@ class CategoriesMenu extends Component {
                         </li>
                         <li><NavLink to="/catalog/tea" activeClassName='active'>Травяной чай</NavLink></li>
                         <li><NavLink to="/catalog/other" activeClassName='active'>Разное</NavLink></li>
+                        </Grid>
+
+
                     </ul>
 
 

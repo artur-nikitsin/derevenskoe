@@ -46,48 +46,66 @@ class HeaderMenu extends Component {
                                 </li>
 
                                 <li className="nav-item dropdown">
+
                                     <NavLink to="/catalog" activeClassName='active' className=" dropdown-toggle"
                                              id="navbarDropdown" role="button"
                                              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         КАТАЛОГ
                                     </NavLink>
 
+
+
                                     <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <NavLink to="/catalog/vegetables" className="dropdown-item"
-                                                 activeClassName='active'
-                                        >Овощи</NavLink>
+                                        <NavLink to="/catalog/vegetables" className="dropdown-item">
+                                            Овощи</NavLink>
+
                                         <div className="dropdown-divider"></div>
+
                                         <NavLink to="/catalog/zakatki" className="dropdown-item"
                                                  activeClassName='active'>Закатки</NavLink>
                                         <div className="dropdown-divider"></div>
+
                                         <NavLink to="/catalog/jam" className="dropdown-item"
                                                  activeClassName='active'>Варенье</NavLink>
                                         <div className="dropdown-divider"></div>
+
                                         <NavLink to="/catalog/dumplings" className="dropdown-item"
                                                  activeClassName='active'>Пельмени и
                                             вареники</NavLink>
+
                                         <div className="dropdown-divider"></div>
+
                                         <NavLink to="/catalog/milk_products" className="dropdown-item"
                                                  activeClassName='active'>Молочные
                                             продукты</NavLink>
+
                                         <div className="dropdown-divider"></div>
+
                                         <NavLink to="/catalog/bread" className="dropdown-item"
                                                  activeClassName='active'>Хлеб</NavLink>
                                         <div className="dropdown-divider"></div>
+
                                         <NavLink to="/catalog/meat" className="dropdown-item"
                                                  activeClassName='active'>Мясо</NavLink>
                                         <div className="dropdown-divider"></div>
+
                                         <NavLink to="/catalog/eggs_honey" className="dropdown-item"
                                                  activeClassName='active'>Яйца и
                                             мед</NavLink>
                                         <div className="dropdown-divider"></div>
-                                        <NavLink to="/catalog/oils" className="dropdown-item" activeClassName='active'>Растительные
+
+                                        <NavLink to="/catalog/oils" className="dropdown-item" activeClassName='active'>
+                                            Растительные
                                             масла и
                                             урбеч</NavLink>
                                         <div className="dropdown-divider"></div>
-                                        <NavLink to="/catalog/tea" className="dropdown-item" activeClassName='active'>Травяной
+
+                                        <NavLink to="/catalog/tea" className="dropdown-item" activeClassName='active'>
+                                            Травяной
                                             чай</NavLink>
+
                                         <div className="dropdown-divider"></div>
+
                                         <NavLink to="/catalog/other" className="dropdown-item"
                                                  activeClassName='active'>Разное</NavLink>
 
