@@ -1,6 +1,5 @@
 package by.berdmival.derevenskoe.entity.order;
 
-import by.berdmival.derevenskoe.entity.account.Account;
 import by.berdmival.derevenskoe.entity.account.UserMainInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
@@ -17,10 +16,15 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @ManyToOne
-    private Account account;
-
+    private String customerAddress;
+    private String customerPhone;
+    private String customerName;
     private LocalDateTime orderDateTime;
+
+    @JsonManagedReference
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private UserMainInfo userId;
 
     @JsonManagedReference
     @OneToOne
