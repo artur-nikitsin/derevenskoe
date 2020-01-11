@@ -1,6 +1,5 @@
 package by.berdmival.derevenskoe.service.order;
 
-import by.berdmival.derevenskoe.entity.account.Account;
 import by.berdmival.derevenskoe.entity.account.UserMainInfo;
 import by.berdmival.derevenskoe.entity.order.Order;
 import by.berdmival.derevenskoe.repository.order.OrderRepository;
@@ -27,8 +26,13 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public Order addOrderForUser(Order order, Account account) {
-        order.setAccount(account);
+    public List<Order> getAllByUserId(Long userId) {
+        return orderRepository.findAllByUserId(userId);
+    }
+
+    @Override
+    public Order addOrderForUser(Order order, UserMainInfo info) {
+        order.setUserId(info);
         order.setOrderDateTime(LocalDateTime.now());
         order.setOrderStatus(orderStatusService.getByName("New"));
         return orderRepository.save(order);

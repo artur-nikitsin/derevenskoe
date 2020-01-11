@@ -25,17 +25,17 @@ public class OrderController {
         return ResponseEntity.ok(orderService.getAll());
     }
 
-//    @GetMapping(path = "/orders/user/{userId}")
-//    public ResponseEntity<List<Order>> getCurrentUserOrders(@PathVariable("userId") Long userId) {
-//        return ResponseEntity.ok(orderService.getAllByUserId(userId));
-//    }
+    @GetMapping(path = "/orders/user/{userId}")
+    public ResponseEntity<List<Order>> getCurrentUserOrders(@PathVariable("userId") Long userId) {
+        return ResponseEntity.ok(orderService.getAllByUserId(userId));
+    }
 
     @PostMapping(path = "/orders")
     public ResponseEntity<Order> addOrder(@RequestBody OrderForm form) {
         List<OrderProductDto> orderProductDtoList = form.getProducts();
 
         Order order = new Order();
-        orderService.addOrderForUser(order, form.getAccount());
+        orderService.addOrderForUser(order, form.getInfo());
 
         List<OrderDetails> orderProducts = new ArrayList<>();
         for (OrderProductDto dto : orderProductDtoList) {
