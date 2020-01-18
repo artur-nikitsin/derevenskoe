@@ -1,7 +1,7 @@
 package by.berdmival.derevenskoe.configuration;
 
 import by.berdmival.derevenskoe.interceptor.RootPathInterceptor;
-import by.berdmival.derevenskoe.utils.FileManager;
+import by.berdmival.derevenskoe.util.FileManager;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

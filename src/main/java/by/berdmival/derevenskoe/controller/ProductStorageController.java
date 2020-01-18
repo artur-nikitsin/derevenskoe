@@ -3,7 +3,7 @@ package by.berdmival.derevenskoe.controller;
 import by.berdmival.derevenskoe.entity.product.Product;
 import by.berdmival.derevenskoe.service.product.CategoryService;
 import by.berdmival.derevenskoe.service.product.ProductService;
-import by.berdmival.derevenskoe.utils.FileManager;
+import by.berdmival.derevenskoe.util.FileManager;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;

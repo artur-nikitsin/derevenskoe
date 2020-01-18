@@ -1,4 +1,4 @@
-package by.berdmival.derevenskoe.utils;
+package by.berdmival.derevenskoe.util;
 
 import by.berdmival.derevenskoe.entity.product.Product;
 import lombok.Data;
