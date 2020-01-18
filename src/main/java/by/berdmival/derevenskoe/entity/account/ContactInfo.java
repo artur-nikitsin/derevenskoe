@@ -1,6 +1,5 @@
 package by.berdmival.derevenskoe.entity.account;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -17,7 +16,6 @@ public class ContactInfo {
     private String phoneNumber;
     private String email;
 
-    @JsonManagedReference
     @OneToMany
     private List<DeliveryAddress> address;
 }

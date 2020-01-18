@@ -2,7 +2,6 @@ package by.berdmival.derevenskoe.entity.account;
 
 import by.berdmival.derevenskoe.entity.order.Order;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -16,12 +15,10 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @JsonManagedReference
     @OneToOne
     @JoinColumn(name = "main_info_id", referencedColumnName = "id")
     private UserMainInfo userMainInfo;
 
-    @JsonManagedReference
     @OneToOne
     @JoinColumn(name = "contact_info_id", referencedColumnName = "id")
     private ContactInfo contactInfo;
