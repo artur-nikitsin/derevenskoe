@@ -11,11 +11,14 @@ import Delivery from "./delivery/Delivery";
 import Contacts from "./contacts/Contacts";
 import Bucket from "./bucket/Busket"
 import Footer from "./footer/Footer";
+
 import {
     HashRouter,
     Route
 } from "react-router-dom";
+
 import {createBrowserHistory} from "history";
+
 
 
 const history = createBrowserHistory();
@@ -32,7 +35,7 @@ class MainPage extends Component {
     render() {
 
         return (
-            <HashRouter  history={history}>
+            <HashRouter history={history}>
 
                 <Grid
                     container
@@ -41,6 +44,7 @@ class MainPage extends Component {
                     alignItems="space-around">
 
                     <Header/>
+
                     <div className={"mainPage"}>
                         <Route exact path='/' component={MainCarousel}/>
                         <Route path='/catalog' component={Catalog}/>

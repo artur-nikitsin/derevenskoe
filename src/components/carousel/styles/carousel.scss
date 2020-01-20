@@ -1,6 +1,4 @@
 
-.container {
-}
 
 .slick-slider {
   border: 1px solid red;
@@ -39,6 +37,11 @@
   color: #98d648;
 }
 
-.slick-track {
-  min-width: 200px;
-}
+
+
+/*@media (min-width: 400px) {
+  .slick-slider {
+    width: 100%;
+  }
+}*/
+

@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux'
 import MainPage from "./components/MainPage";
 import 'bootstrap';
-
 import './styles/styles.scss'
 import 'reset-css'
 import 'normalize.css'
@@ -15,8 +14,8 @@ class App extends Component {
         super(props);
     }
 
-
     render() {
+
         return (
             <MainPage className={"mainPage"}/>
         );

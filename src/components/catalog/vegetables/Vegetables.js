@@ -3,6 +3,12 @@ import {Container} from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 
 import ProductCard from "../productCard/ProductCard";
+import {NavLink, Route, Switch} from "react-router-dom";
+import ProductModal from "../../modal/ProductModal";
+import Other from "../other/Other";
+import MainCarousel from "../../carousel/mainCarousel";
+import Zakatki from "../zakatki/Zakatki";
+
 
 class Vegetables extends Component {
 
@@ -46,19 +52,45 @@ class Vegetables extends Component {
     render() {
 
         let productsToPage;
+
+
+        const handleClick = (val) => {
+            console.log(val);
+        };
+
+
         if (this.state.products) {
 
             productsToPage = (this.state.products).map((item, i) => (
-                <ProductCard
-                    description={item.description}
-                    id={i}
-                    name={item.name}
-                    picture={process.env.PUBLIC_URL + item.pictureUrl}
-                />
-            ));
+
+                    <div>
+                        <Route path={this.props.match.path + item.id}
+                               render={() => (<ProductModal linkToCloseModal={this.props.match.path}/>)}/>
+
+
+                        <Route exact={true} path={this.props.location.pathname} render={() => (
+                            <NavLink to={this.props.match.path + item.id} onClick={handleClick.bind(this)}>
+                                <ProductCard
+                                    locationInCatalod={this.props.match.path}
+                                    description={item.description}
+                                    id={item.id}
+                                    name={item.name}
+                                    picture={process.env.PUBLIC_URL + item.pictureUrl}/>
+                            </NavLink>
+                        )}/>
+                    </div>
+
+                )
+            );
         }
 
+
+        console.log(this.props.match);
+        console.log(productsToPage);
+
         return (
+
+
             <Container>
 
                 <Grid
@@ -70,8 +102,6 @@ class Vegetables extends Component {
                     {productsToPage}
 
                 </Grid>
-
-
             </Container>
         );
     }

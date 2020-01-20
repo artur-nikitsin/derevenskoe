@@ -38,9 +38,7 @@ class MainCarousel extends Component {
             dots: true,
             infinite: true,
             speed: 500,
-            adaptiveHeight: true,
             arrows: true,
-            useCSS: true,
             responsive: [
                 {
                     breakpoint: 1920,
@@ -78,9 +76,10 @@ class MainCarousel extends Component {
 
         /*TODO:    realize images requiring from components folders  */
 
+
         return (
-            <Container className={"container"}>
-                <Slider {...settings}>
+            <Container>
+                <Slider className={"slider1"} {...settings}>
                     <div>
                         <img src="assets/caroucel/10022a-960x400.webp" alt=""/>
                     </div>
@@ -102,3 +101,4 @@ class MainCarousel extends Component {
 
 
 export default MainCarousel;
+
