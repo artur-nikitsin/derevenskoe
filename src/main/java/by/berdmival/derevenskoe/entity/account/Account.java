@@ -31,21 +31,13 @@ public class Account extends User {
             inverseJoinColumns = @JoinColumn(name = "authority")
     )
     private Set<CustomGrantedAuthority> authorities;
-
-    public Collection<GrantedAuthority> getAuthorities() {
-        return Collections.unmodifiableSet(authorities);
-    }
-
     @OneToOne
     @JoinColumn(name = "main_info_id", referencedColumnName = "id")
     private UserMainInfo userMainInfo;
-
     @OneToOne
     @JoinColumn(name = "contact_info_id", referencedColumnName = "id")
     private ContactInfo contactInfo;
-
     private String photoUri;
-
     @JsonIgnore
     @OneToMany
     private List<Order> orders;
@@ -56,5 +48,9 @@ public class Account extends User {
 
     public Account() {
         this("U", "P", AuthorityUtils.createAuthorityList("USER"));
+    }
+
+    public Collection<GrantedAuthority> getAuthorities() {
+        return Collections.unmodifiableSet(authorities);
     }
 }

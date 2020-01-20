@@ -26,7 +26,7 @@ public class ProductServiceImpl implements ProductService {
         product.setEnabled(true);
         product.setAdvisable(true);
         product.setPictures(new ArrayList<>());
-        if (product.getCoefficient() == 0.0){
+        if (product.getCoefficient() == 0.0) {
             product.setCoefficient(1.0);
         }
         return productRepository.save(product);

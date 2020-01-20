@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 @ControllerAdvice
-public class CustomGrantedAuthorityExceptionController {
+public class AccountExceptionController {
     @ExceptionHandler(value = CustomGrantedAuthorityNotFoundException.class)
     public ResponseEntity<Object> notFoundByIdException(CustomGrantedAuthorityNotFoundException e) {
         return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);

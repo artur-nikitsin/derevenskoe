@@ -11,6 +11,6 @@ import java.nio.file.NoSuchFileException;
 public class FileExceptionController {
     @ExceptionHandler(value = NoSuchFileException.class)
     public ResponseEntity<Object> notFoundException(NoSuchFileException e) {
-        return new ResponseEntity<>("File '"+e.getMessage()+"' not found", HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<>("File '" + e.getMessage() + "' not found", HttpStatus.BAD_REQUEST);
     }
 }
