@@ -1,9 +1,10 @@
-package by.berdmival.derevenskoe.configuration.security;
+package by.berdmival.derevenskoe.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -13,13 +14,11 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.oauth2.config.annotation.web.configuration.EnableOAuth2Client;
 
 import javax.sql.DataSource;
 
 @Configuration
 @EnableWebSecurity
-@EnableOAuth2Client
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Autowired
@@ -27,21 +26,24 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     @Override
     public void configure(HttpSecurity httpSecurity) throws Exception {
-        httpSecurity.csrf().disable()
+        httpSecurity
+                .httpBasic()
+                .and().csrf().disable()
+                .formLogin()
+                .and()
                 .authorizeRequests()
-//                .antMatchers("/").permitAll()
-//                .antMatchers("/products/**").permitAll()
-//                .antMatchers("/products/**").authenticated()
-//                .antMatchers("/orders/all").hasAuthority("ADMIN")
-//                .antMatchers("/orders/**").authenticated()
-//                .antMatchers("/clients/**").permitAll()
-//                .antMatchers("/users/**").permitAll()
-                .anyRequest().permitAll()
-//                .anyRequest().authenticated()
-                .and()
-                .oauth2Login()
-                .and()
-                .logout();
+                .antMatchers(HttpMethod.POST, "/login").permitAll()
+                .antMatchers(HttpMethod.GET, "/products/**").permitAll()
+                .antMatchers(HttpMethod.POST, "/products/**").authenticated()
+                .antMatchers(HttpMethod.PUT, "/products/**").authenticated()
+                .antMatchers(HttpMethod.DELETE, "/products/**").authenticated()
+                .antMatchers(HttpMethod.GET, "/categories/**").permitAll()
+                .antMatchers(HttpMethod.POST, "/categories/**").authenticated()
+                .antMatchers(HttpMethod.PUT, "/categories/**").authenticated()
+                .antMatchers(HttpMethod.DELETE, "/categories/**").authenticated()
+                .antMatchers("/users/**").authenticated()
+                .anyRequest().authenticated()
+                .and().rememberMe();
     }
 
     @Override
@@ -54,8 +56,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                         "/resources/**",
                         "/static/**",
                         "/css/**", "/js/**", "/img/**",
-                        "/webjars/**",
-                        "/clients/**"
+                        "/webjars/**"
                 );
     }
 
