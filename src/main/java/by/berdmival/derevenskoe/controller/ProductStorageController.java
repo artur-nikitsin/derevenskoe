@@ -7,6 +7,7 @@ import by.berdmival.derevenskoe.util.FileManager;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.nio.file.NoSuchFileException;
 import java.util.List;
 
 @Api(value = "Products management system")
@@ -26,6 +28,9 @@ public class ProductStorageController {
 
     @Autowired
     private FileManager fileManager;
+
+    @Value("${upload.products}")
+    private String productsDir;
 
     @ApiOperation(value = "Get all products in the storage", response = List.class)
     @GetMapping(path = "/products")
@@ -44,29 +49,29 @@ public class ProductStorageController {
     public ResponseEntity<Product> addPictures(@PathVariable("productId") Long productId,
                                                @RequestParam("files") MultipartFile[] uploadFiles
     ) throws IOException {
-        return ResponseEntity.ok(
-                productService.update(
-                        fileManager.uploadProductImage(
-                                productService.findById(productId),
-                                uploadFiles
-                        )
-                )
-        );
+        Product product = productService.findById(productId);
+        product.getPictures().addAll(fileManager.uploadImage(
+                productsDir,
+                Long.toString(productId),
+                uploadFiles
+        ));
+        return ResponseEntity.ok(productService.update(product));
     }
 
     @ApiOperation(value = "Delete the image of the product", response = Product.class)
     @DeleteMapping(path = "/products/{productId}/images/{imageName}")
     public ResponseEntity<Product> deletePictures(@PathVariable("productId") Long productId,
                                                   @PathVariable("imageName") String imageName
-    ) {
-        return ResponseEntity.ok(
-                productService.update(
-                        fileManager.deleteProductImage(
-                                productService.findById(productId),
-                                imageName
-                        )
-                )
-        );
+    ) throws NoSuchFileException {
+        Product product = productService.findById(productId);
+        if (fileManager.deleteImage(
+                productsDir,
+                Long.toString(productId),
+                imageName
+        )) {
+            product.getPictures().remove(imageName);
+        }
+        return ResponseEntity.ok(productService.update(product));
     }
 
     @ApiOperation(value = "Update product in the storage", response = Product.class)

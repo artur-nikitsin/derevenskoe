@@ -1,12 +1,13 @@
 package by.berdmival.derevenskoe.util;
 
-import by.berdmival.derevenskoe.entity.account.Account;
-import by.berdmival.derevenskoe.entity.product.Product;
 import lombok.Data;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.NoSuchFileException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -21,22 +22,23 @@ public class FileManager {
         }
     }
 
-    private File getProductImagesUploadDir(Product product) {
+    private File getUploadDir(String type, String id) {
         return new File(
                 this.uploadPath
                         .concat(File.separator)
-                        .concat("product")
+                        .concat(type)
                         .concat(File.separator)
-                        .concat(Long.toString(product.getId()))
+                        .concat(id)
         );
     }
 
-    public Product uploadProductImage(Product product, MultipartFile[] files) throws IOException {
-        File productImagesUploadDir = getProductImagesUploadDir(product);
+    public List<String> uploadImage(String type, String id, MultipartFile[] files) throws IOException {
+        File productImagesUploadDir = getUploadDir(type, id);
         if (!productImagesUploadDir.exists()) {
             productImagesUploadDir.mkdirs();
         }
 
+        List<String> resultFilenames = new ArrayList<>();
         for (MultipartFile file : files) {
             if (file.isEmpty()) {
                 continue;
@@ -49,69 +51,22 @@ public class FileManager {
                             File.separator +
                             resultFilename
             ));
-            product.getPictures().add(resultFilename);
+            resultFilenames.add(resultFilename);
         }
-        return product;
+        return resultFilenames;
     }
 
-    public Product deleteProductImage(Product product, String imageName) {
+    public Boolean deleteImage(String type, String id, String imageName) throws NoSuchFileException {
         File imageFile = new File(
-                getProductImagesUploadDir(product).getAbsolutePath() +
+                getUploadDir(type, id)
+                        .getAbsolutePath() +
                         File.separator +
                         imageName
         );
         if (imageFile.exists()) {
-            if (imageFile.delete()) {
-                product.getPictures().remove(imageName);
-            }
+            return imageFile.delete();
+        } else {
+            throw new NoSuchFileException(imageFile.getAbsolutePath());
         }
-        return product;
-    }
-
-    private File getUserImagesUploadDir(Account account) {
-        return new File(
-                this.uploadPath
-                        .concat(File.separator)
-                        .concat("user")
-                        .concat(File.separator)
-                        .concat(account.getUsername())
-        );
-    }
-
-    public Account uploadUserImage(Account account, MultipartFile[] files) throws IOException {
-        File userImagesUploadDir = getUserImagesUploadDir(account);
-        if (!userImagesUploadDir.exists()) {
-            userImagesUploadDir.mkdirs();
-        }
-
-        for (MultipartFile file : files) {
-            if (file.isEmpty()) {
-                continue;
-            }
-
-            String uuidFile = UUID.randomUUID().toString();
-            String resultFilename = uuidFile + "_" + file.getOriginalFilename();
-            file.transferTo(new File(
-                    userImagesUploadDir.getAbsolutePath() +
-                            File.separator +
-                            resultFilename
-            ));
-            account.setPhotoUri(resultFilename);
-        }
-        return account;
-    }
-
-    public Account deleteUserImage(Account account, String imageName) {
-        File imageFile = new File(
-                getUserImagesUploadDir(account).getAbsolutePath() +
-                        File.separator +
-                        imageName
-        );
-        if (imageFile.exists()) {
-            if (imageFile.delete()) {
-                account.setPhotoUri("");
-            }
-        }
-        return account;
     }
 }

@@ -34,3 +34,5 @@ spring:
       max-request-size: 5MB
 upload:
   path: uploads
+  products: product
+  users: user
