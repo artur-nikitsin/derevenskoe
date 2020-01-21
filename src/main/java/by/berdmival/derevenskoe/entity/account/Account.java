@@ -1,7 +1,6 @@
 package by.berdmival.derevenskoe.entity.account;
 
 import by.berdmival.derevenskoe.entity.order.Order;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
@@ -31,15 +30,18 @@ public class Account extends User {
             inverseJoinColumns = @JoinColumn(name = "authority")
     )
     private Set<CustomGrantedAuthority> authorities;
+
     @OneToOne
     @JoinColumn(name = "main_info_id", referencedColumnName = "id")
     private UserMainInfo userMainInfo;
+
     @OneToOne
     @JoinColumn(name = "contact_info_id", referencedColumnName = "id")
     private ContactInfo contactInfo;
+
     private String photoUri;
-    @JsonIgnore
-    @OneToMany
+
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Order> orders;
 
     public Account(String username, String password, Collection<? extends GrantedAuthority> authorities) {

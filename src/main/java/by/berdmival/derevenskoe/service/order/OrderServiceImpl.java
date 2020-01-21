@@ -1,7 +1,8 @@
 package by.berdmival.derevenskoe.service.order;
 
-import by.berdmival.derevenskoe.entity.account.UserMainInfo;
+import by.berdmival.derevenskoe.entity.account.Account;
 import by.berdmival.derevenskoe.entity.order.Order;
+import by.berdmival.derevenskoe.repository.account.AccountRepository;
 import by.berdmival.derevenskoe.repository.order.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -19,6 +20,8 @@ public class OrderServiceImpl implements OrderService {
     private OrderRepository orderRepository;
     @Autowired
     private OrderStatusService orderStatusService;
+    @Autowired
+    private AccountRepository accountRepository;
 
     @Override
     public List<Order> getAll() {
@@ -26,16 +29,12 @@ public class OrderServiceImpl implements OrderService {
     }
 
     @Override
-    public List<Order> getAllByUserId(Long userId) {
-        return orderRepository.findAllByUserId(userId);
-    }
-
-    @Override
-    public Order addOrderForUser(Order order, UserMainInfo info) {
-        order.setUserId(info);
+    public Order addOrderForUser(Order order, Account account) {
         order.setOrderDateTime(LocalDateTime.now());
         order.setOrderStatus(orderStatusService.getByName("New"));
-        return orderRepository.save(order);
+        account.getOrders().add(order);
+        accountRepository.save(account);
+        return order;
     }
 
     @Override

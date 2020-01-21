@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -32,17 +31,18 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .and()
                 .authorizeRequests()
-                .antMatchers(HttpMethod.POST, "/login").permitAll()
-                .antMatchers(HttpMethod.GET, "/products/**").permitAll()
-                .antMatchers(HttpMethod.POST, "/products/**").authenticated()
-                .antMatchers(HttpMethod.PUT, "/products/**").authenticated()
-                .antMatchers(HttpMethod.DELETE, "/products/**").authenticated()
-                .antMatchers(HttpMethod.GET, "/categories/**").permitAll()
-                .antMatchers(HttpMethod.POST, "/categories/**").authenticated()
-                .antMatchers(HttpMethod.PUT, "/categories/**").authenticated()
-                .antMatchers(HttpMethod.DELETE, "/categories/**").authenticated()
-                .antMatchers("/users/**").authenticated()
-                .anyRequest().authenticated()
+//                .antMatchers(HttpMethod.POST, "/login").permitAll()
+//                .antMatchers(HttpMethod.GET, "/products/**").permitAll()
+//                .antMatchers(HttpMethod.POST, "/products/**").authenticated()
+//                .antMatchers(HttpMethod.PUT, "/products/**").authenticated()
+//                .antMatchers(HttpMethod.DELETE, "/products/**").authenticated()
+//                .antMatchers(HttpMethod.GET, "/categories/**").permitAll()
+//                .antMatchers(HttpMethod.POST, "/categories/**").authenticated()
+//                .antMatchers(HttpMethod.PUT, "/categories/**").authenticated()
+//                .antMatchers(HttpMethod.DELETE, "/categories/**").authenticated()
+//                .antMatchers("/users/**").authenticated()
+//                .anyRequest().authenticated()
+                .anyRequest().permitAll()
                 .and().rememberMe();
     }
 
