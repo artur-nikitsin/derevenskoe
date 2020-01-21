@@ -7,7 +7,8 @@
 <body>
 <div th:text="${id}"></div>
 <div th:text="${img}"></div>
+<div th:text="${type}"></div>
 <div><img th:src="@{${baseUrl}}"
-          th:with="baseUrl='/img/'+${id}+'/'+${img}"></div>
+          th:with="baseUrl='/img/'+${type}+'/'+${id}+'/'+${img}"></div>
 </body>
 </html>

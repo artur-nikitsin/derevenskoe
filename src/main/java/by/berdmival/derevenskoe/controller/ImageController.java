@@ -20,17 +20,28 @@ public class ImageController {
     private String uploadPath;
 
     @ApiOperation(value = "Testing of loading images from server")
-    @GetMapping("/testimg/{id}/{img}")
-    public ModelAndView testImage(ModelAndView modelAndView, @PathVariable String img, @PathVariable String id) {
+    @GetMapping("/testimg/{type}/{id}/{img}")
+    public ModelAndView testImage(
+            ModelAndView modelAndView, @PathVariable String img, @PathVariable String id, @PathVariable String type
+    ) {
         modelAndView.addObject("id", id);
         modelAndView.addObject("img", img);
+        modelAndView.addObject("type", type);
         modelAndView.setViewName("images.html");
         return modelAndView;
     }
 
-    @ApiOperation(value = "Load images from server")
-    @GetMapping("/img/{id}/{img}")
-    public ResponseEntity<byte[]> getImageWithMediaType(@PathVariable String id, @PathVariable String img) throws IOException {
-        return ResponseEntity.ok(Files.readAllBytes(new File(uploadPath + "/" + id + "/" + img).toPath()));
+    @ApiOperation(value = "Load images from server for type owner with id owner and image name")
+    @GetMapping(value = "/img/{type}/{id}/{img}")
+    public ResponseEntity<byte[]> getImage(
+            @PathVariable String id, @PathVariable String img, @PathVariable String type
+    ) throws IOException {
+        return ResponseEntity.ok(
+                Files.readAllBytes(
+                        new File(
+                                uploadPath + "/" + type + "/" + id + "/" + img
+                        ).toPath()
+                )
+        );
     }
 }

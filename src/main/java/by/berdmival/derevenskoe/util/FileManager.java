@@ -34,7 +34,7 @@ public class FileManager {
     public Product uploadProductImage(Product product, MultipartFile[] files) throws IOException {
         File productImagesUploadDir = getProductImagesUploadDir(product);
         if (!productImagesUploadDir.exists()) {
-            productImagesUploadDir.mkdir();
+            productImagesUploadDir.mkdirs();
         }
 
         for (MultipartFile file : files) {
@@ -81,7 +81,7 @@ public class FileManager {
     public Account uploadUserImage(Account account, MultipartFile[] files) throws IOException {
         File userImagesUploadDir = getUserImagesUploadDir(account);
         if (!userImagesUploadDir.exists()) {
-            userImagesUploadDir.mkdir();
+            userImagesUploadDir.mkdirs();
         }
 
         for (MultipartFile file : files) {
