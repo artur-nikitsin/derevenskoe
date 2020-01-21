@@ -1,5 +1,6 @@
 package by.berdmival.derevenskoe.util;
 
+import by.berdmival.derevenskoe.entity.account.Account;
 import by.berdmival.derevenskoe.entity.product.Product;
 import lombok.Data;
 import org.springframework.web.multipart.MultipartFile;
@@ -24,6 +25,8 @@ public class FileManager {
         return new File(
                 this.uploadPath
                         .concat(File.separator)
+                        .concat("product")
+                        .concat(File.separator)
                         .concat(Long.toString(product.getId()))
         );
     }
@@ -41,7 +44,11 @@ public class FileManager {
 
             String uuidFile = UUID.randomUUID().toString();
             String resultFilename = uuidFile + "_" + file.getOriginalFilename();
-            file.transferTo(new File(productImagesUploadDir.getAbsolutePath() + File.separator + resultFilename));
+            file.transferTo(new File(
+                    productImagesUploadDir.getAbsolutePath() +
+                            File.separator +
+                            resultFilename
+            ));
             product.getPictures().add(resultFilename);
         }
         return product;
@@ -59,5 +66,52 @@ public class FileManager {
             }
         }
         return product;
+    }
+
+    private File getUserImagesUploadDir(Account account) {
+        return new File(
+                this.uploadPath
+                        .concat(File.separator)
+                        .concat("user")
+                        .concat(File.separator)
+                        .concat(account.getUsername())
+        );
+    }
+
+    public Account uploadUserImage(Account account, MultipartFile[] files) throws IOException {
+        File userImagesUploadDir = getUserImagesUploadDir(account);
+        if (!userImagesUploadDir.exists()) {
+            userImagesUploadDir.mkdir();
+        }
+
+        for (MultipartFile file : files) {
+            if (file.isEmpty()) {
+                continue;
+            }
+
+            String uuidFile = UUID.randomUUID().toString();
+            String resultFilename = uuidFile + "_" + file.getOriginalFilename();
+            file.transferTo(new File(
+                    userImagesUploadDir.getAbsolutePath() +
+                            File.separator +
+                            resultFilename
+            ));
+            account.setPhotoUri(resultFilename);
+        }
+        return account;
+    }
+
+    public Account deleteUserImage(Account account, String imageName) {
+        File imageFile = new File(
+                getUserImagesUploadDir(account).getAbsolutePath() +
+                        File.separator +
+                        imageName
+        );
+        if (imageFile.exists()) {
+            if (imageFile.delete()) {
+                account.setPhotoUri("");
+            }
+        }
+        return account;
     }
 }
