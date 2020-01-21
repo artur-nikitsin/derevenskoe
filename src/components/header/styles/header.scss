@@ -4,3 +4,10 @@
   padding: 0;
   margin: 0;
 }
+
+.scrolled {
+  position: fixed;
+  top:0;
+  left: 0;
+  z-index: 1000;
+}

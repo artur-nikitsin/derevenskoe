@@ -48,16 +48,12 @@ export default function ProductModal(props) {
 
     return (
         <div>
-           {/* <button type="button" onClick={handleOpen}>
-                Open Modal
-            </button>*/}
 
             <Modal
                 aria-labelledby="simple-modal-title"
                 aria-describedby="simple-modal-description"
                 open={true}
                 onClose={handleClose}>
-
 
                 <div style={modalStyle} className={classes.paper}>
 

@@ -7,13 +7,14 @@ import "./styles/headerTop.scss"
 
 
 class HeaderTop extends Component {
-
+    constructor(props) {
+        super(props);
+    }
 
     render() {
 
-
         return (
-            <div className={"HeaderTop"}>
+            <div className={this.props.scrolled ? "headerTopOff" : "headerTop"}>
                 <Container className={"container"}>
                     <ul>
                         <Grid container

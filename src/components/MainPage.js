@@ -11,14 +11,13 @@ import Delivery from "./delivery/Delivery";
 import Contacts from "./contacts/Contacts";
 import Bucket from "./bucket/Busket"
 import Footer from "./footer/Footer";
-
+import Vegetables from "./catalog/vegetables/Vegetables";
 import {
     HashRouter,
     Route
 } from "react-router-dom";
 
 import {createBrowserHistory} from "history";
-
 
 
 const history = createBrowserHistory();
@@ -30,6 +29,9 @@ class MainPage extends Component {
         super(props);
         this.state = {};
     }
+
+
+
 
 
     render() {
@@ -46,12 +48,14 @@ class MainPage extends Component {
                     <Header/>
 
                     <div className={"mainPage"}>
+
                         <Route exact path='/' component={MainCarousel}/>
                         <Route path='/catalog' component={Catalog}/>
                         <Route path='/delivery' component={Delivery}/>
                         <Route path='/contacts' component={Contacts}/>
                         <Route path='/search' component={Bucket}/>
                         <Route path='/basket' component={Bucket}/>
+
                     </div>
                     <Footer/>
 

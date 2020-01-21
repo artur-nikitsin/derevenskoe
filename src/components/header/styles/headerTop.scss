@@ -1,8 +1,11 @@
 @import  "./mixinForLists.scss";
 
-.HeaderTop {
+.headerTop {
   background: #98d648;
   padding: 5px 0 5px 0;
-  /*height: 100px;*/
+ /* height: 100px;*/
  /* @include reset-list;*/
+}
+.headerTopOff {
+  display: none;
 }

@@ -5,14 +5,41 @@ import CategoriesMenu from "./CategoriesMenu";
 import "./styles/header.scss"
 
 class Header extends Component {
+
+    constructor(props) {
+        super(props);
+        this.handleScroll = this.handleScroll.bind(this);
+        this.state = {
+            scrolled: false
+        };
+    }
+
+    handleScroll = () => {
+        if (window.scrollY >= 100) {
+            this.setState({scrolled: true});
+            console.log(this.state);
+        }
+        if (window.scrollY <= 100) {
+            this.setState({scrolled: false});
+            console.log(this.state);
+        }
+    };
+
+    componentDidMount = () => {
+        window.addEventListener('scroll', this.handleScroll, true);
+    };
+    componentWillUnmount = () => {
+        window.removeEventListener('scroll', this.handleScroll);
+    };
+
+
     render() {
 
-
         return (
-            <div className={"Header"}>
-                <HeaderTop/>
-                <HeaderMenu/>
-                <CategoriesMenu/>
+            <div className={this.state.scrolled ? "Header scrolled" : "Header"}>
+                <HeaderTop scrolled={this.state.scrolled}/>
+                <HeaderMenu scrolled={this.state.scrolled}/>
+                <CategoriesMenu scrolled={this.state.scrolled}/>
             </div>
         );
     }
