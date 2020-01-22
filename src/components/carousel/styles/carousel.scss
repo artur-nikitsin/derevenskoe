@@ -1,7 +1,7 @@
 
 
 .slick-slider {
-  border: 1px solid red;
+height: 400px;
 }
 
 
@@ -39,9 +39,14 @@
 
 
 
-/*@media (min-width: 400px) {
+@media (max-width: 600px) {
   .slick-slider {
-    width: 100%;
+    width: 500px;
   }
-}*/
+}
 
+@media (max-width: 510px) {
+  .slick-slider {
+    width: 400px;
+  }
+}

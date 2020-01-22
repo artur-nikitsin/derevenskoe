@@ -7,7 +7,6 @@ import {NavLink, Route, Switch} from "react-router-dom";
 import ProductModal from "../../modal/ProductModal";
 
 
-
 class Vegetables extends Component {
 
     constructor(props) {
@@ -62,7 +61,11 @@ class Vegetables extends Component {
 
                     <div>
                         <Route path={this.props.match.path + item.id}
-                               render={() => (<ProductModal linkToCloseModal={this.props.match.path}/>)}/>
+                               render={() => (
+                                   <ProductModal linkToCloseModal={this.props.match.path}
+                                                 description={item.description}
+                                                 img={item.pictureUrl}
+                                                 name={item.name}/>)}/>
 
 
                         <Route exact={true} path={this.props.location.pathname} render={() => (

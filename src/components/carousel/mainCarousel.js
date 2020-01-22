@@ -36,27 +36,27 @@ class MainCarousel extends Component {
 
         const settings = {
             dots: true,
-            infinite: true,
+            infinite: false,
             speed: 500,
             arrows: true,
+            initialSlide: 0,
             responsive: [
                 {
-                    breakpoint: 1920,
+                    breakpoint: 1024,
                     settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                        adaptiveHeight: true,
-                        infinite: true,
+                        slidesToShow: 3,
+                        slidesToScroll: 3,
+                        infinite: false,
                         dots: true
                     }
                 },
                 {
                     breakpoint: 600,
                     settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        initialSlide: 1,
-                        adaptiveHeight: true,
+                        slidesToShow: 2,
+                        slidesToScroll: 2,
+                        initialSlide: 2,
+                        infinite: false
                     }
                 },
                 {
@@ -64,7 +64,8 @@ class MainCarousel extends Component {
                     settings: {
                         slidesToShow: 1,
                         slidesToScroll: 1,
-                        adaptiveHeight: true,
+                        infinite: false,
+                        arrows: false
                     }
                 }
             ],
@@ -76,10 +77,11 @@ class MainCarousel extends Component {
 
         /*TODO:    realize images requiring from components folders  */
 
+        console.log(this.props);
 
         return (
-            <Container>
-                <Slider className={"slider1"} {...settings}>
+            <Container fixed maxWidth="md">
+                <Slider  {...settings}>
                     <div>
                         <img src="assets/caroucel/10022a-960x400.webp" alt=""/>
                     </div>
