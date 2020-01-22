@@ -64,7 +64,7 @@ class Vegetables extends Component {
                                render={() => (
                                    <ProductModal linkToCloseModal={this.props.match.path}
                                                  description={item.description}
-                                                 img={item.pictureUrl}
+                                                 img={process.env.PUBLIC_URL + item.pictureUrl}
                                                  name={item.name}/>)}/>
 
 
