@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/derevenskoe/static/css/main.70f953c0.chunk.css",
-    "main.js": "/derevenskoe/static/js/main.51c98f2c.chunk.js",
-    "main.js.map": "/derevenskoe/static/js/main.51c98f2c.chunk.js.map",
+    "main.css": "/derevenskoe/static/css/main.afaf3490.chunk.css",
+    "main.js": "/derevenskoe/static/js/main.95ff0d95.chunk.js",
+    "main.js.map": "/derevenskoe/static/js/main.95ff0d95.chunk.js.map",
     "runtime-main.js": "/derevenskoe/static/js/runtime-main.5273cf60.js",
     "runtime-main.js.map": "/derevenskoe/static/js/runtime-main.5273cf60.js.map",
     "static/css/2.84da8976.chunk.css": "/derevenskoe/static/css/2.84da8976.chunk.css",
-    "static/js/2.0a769a50.chunk.js": "/derevenskoe/static/js/2.0a769a50.chunk.js",
-    "static/js/2.0a769a50.chunk.js.map": "/derevenskoe/static/js/2.0a769a50.chunk.js.map",
+    "static/js/2.1d15442d.chunk.js": "/derevenskoe/static/js/2.1d15442d.chunk.js",
+    "static/js/2.1d15442d.chunk.js.map": "/derevenskoe/static/js/2.1d15442d.chunk.js.map",
     "index.html": "/derevenskoe/index.html",
-    "precache-manifest.5b5987ba8f15ae2a0b44bd94b6e67611.js": "/derevenskoe/precache-manifest.5b5987ba8f15ae2a0b44bd94b6e67611.js",
+    "precache-manifest.b37a3c6f800012be130f816bee8b0685.js": "/derevenskoe/precache-manifest.b37a3c6f800012be130f816bee8b0685.js",
     "service-worker.js": "/derevenskoe/service-worker.js",
     "static/css/2.84da8976.chunk.css.map": "/derevenskoe/static/css/2.84da8976.chunk.css.map",
-    "static/css/main.70f953c0.chunk.css.map": "/derevenskoe/static/css/main.70f953c0.chunk.css.map"
+    "static/css/main.afaf3490.chunk.css.map": "/derevenskoe/static/css/main.afaf3490.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.5273cf60.js",
     "static/css/2.84da8976.chunk.css",
-    "static/js/2.0a769a50.chunk.js",
-    "static/css/main.70f953c0.chunk.css",
-    "static/js/main.51c98f2c.chunk.js"
+    "static/js/2.1d15442d.chunk.js",
+    "static/css/main.afaf3490.chunk.css",
+    "static/js/main.95ff0d95.chunk.js"
   ]
 }
