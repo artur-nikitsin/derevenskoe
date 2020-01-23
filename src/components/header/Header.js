@@ -10,14 +10,14 @@ class Header extends Component {
         super(props);
         this.handleScroll = this.handleScroll.bind(this);
         this.state = {
-            scrolled: false
+            scrolled: false,
+            offsetTop: 0
         };
     }
 
     handleScroll = () => {
         if (window.scrollY >= 100) {
             this.setState({scrolled: true});
-            console.log(this.state);
         }
         if (window.scrollY <= 100) {
             this.setState({scrolled: false});
@@ -39,7 +39,7 @@ class Header extends Component {
             <div className={this.state.scrolled ? "Header scrolled" : "Header"}>
                 <HeaderTop scrolled={this.state.scrolled}/>
                 <HeaderMenu scrolled={this.state.scrolled}/>
-                <CategoriesMenu scrolled={this.state.scrolled}/>
+               {/* <CategoriesMenu scrolled={this.state.scrolled}/>*/}
             </div>
         );
     }
