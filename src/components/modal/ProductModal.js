@@ -3,6 +3,9 @@ import {Button, ButtonGroup, Modal, ModalHeader, ModalBody, ModalFooter} from 'r
 import {Redirect, Link} from "react-router-dom";
 import "./styles/modal.scss"
 
+import CounterButtons from "../buttons/CounterButtons";
+import AddToBucketButton from "../buttons/AddToBucketButton";
+
 const ProductModal = (props) => {
     const {
         buttonLabel,
@@ -11,21 +14,10 @@ const ProductModal = (props) => {
 
     const [modal, setModal] = useState(true);
     const [redirectBack, setRedirectBack] = useState(false);
-    const [count, setCount] = useState(0);
 
     const toggle = () => {
         setModal(!modal);
         setRedirectBack(!redirectBack);
-    };
-
-    const setLowCount = () => {
-        if (count > 0) {
-            setCount(count - 1)
-        }
-    };
-
-    const setUpCount = () => {
-        setCount(count + 1)
     };
 
 
@@ -42,14 +34,9 @@ const ProductModal = (props) => {
                 </ModalBody>
                 <ModalFooter>
 
-                    <ButtonGroup>
-                        <Button className={"setCountButtons"} outline onClick={setLowCount}>-</Button>
-                        <Button className={"counterInput"} outline>{count}</Button>
-                        <Button className={"setCountButtons"} outline onClick={setUpCount}>+</Button>
-                    </ButtonGroup>
+                    <CounterButtons/>
+                    <AddToBucketButton/>
 
-                    <Button className={"addToBucketButton"} onClick={toggle}>Добавить в
-                        корзину</Button>{' '}
                     <Button outline color="secondary" onClick={toggle}>Закрыть</Button>
                 </ModalFooter>
             </Modal>

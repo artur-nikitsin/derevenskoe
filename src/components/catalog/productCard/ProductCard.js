@@ -7,10 +7,10 @@ import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
-import {Route, NavLink} from "react-router-dom";
-import ProductModal from "../../modal/ProductModal"
-import Bucket from "../../bucket/Busket";
+import {NavLink, Route, Switch} from "react-router-dom";
+
+import CounterButtons from "../../buttons/CounterButtons";
+import AddToBucketButton from "../../buttons/AddToBucketButton";
 
 
 const useStyles = makeStyles({
@@ -32,36 +32,34 @@ export default function ProductCard(props) {
 
     return (
 
-            <div>
-                <Card className={classes.card}>
+        <div>
+            <Card className={classes.card}>
 
-                    <CardActionArea>
+                <CardActionArea>
+                    <NavLink to={props.linkToProduct}>
                         <CardMedia
                             className={classes.media}
                             image={props.picture}
-                            title="Contemplative Reptile"
-                        />
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="h2">
-                                {props.name}
-                            </Typography>
-                            <Typography variant="body2" color="textSecondary" component="p">
-                                {props.description}
-                            </Typography>
-                        </CardContent>
-                    </CardActionArea>
-                    <CardActions>
-                        <Button size="small" color="primary">
-                            Подробнее
-                        </Button>
-                        <Button size="small" color="primary">
-                            Добавить в корзину <ShoppingCartIcon/>
-                        </Button>
-                    </CardActions>
-                </Card>
+                            title={props.name + " Нажмите на изображение, чтобы узнать больше"}
+                        /></NavLink>
+                    <CardContent>
 
-            </div>
+                        <Typography gutterBottom variant="h5" component="h2">
+                            {props.name}
+                        </Typography>
+                        <Typography variant="body2" color="textSecondary" component="p">
+                            {props.description}
+                        </Typography>
 
+                    </CardContent>
+                </CardActionArea>
+                <CardActions>
+                    <CounterButtons/>
+                    <AddToBucketButton/>
+                </CardActions>
+            </Card>
+
+        </div>
 
 
     );

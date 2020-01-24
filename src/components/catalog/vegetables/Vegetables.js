@@ -69,14 +69,15 @@ class Vegetables extends Component {
 
 
                         <Route exact={true} path={this.props.location.pathname} render={() => (
-                            <NavLink to={this.props.match.path + item.id}>
+                           /* <NavLink to={this.props.match.path + item.id}>*/
                                 <ProductCard
+                                    linkToProduct={this.props.match.path + item.id}
                                     locationInCatalod={this.props.match.path}
                                     description={item.description}
                                     id={item.id}
                                     name={item.name}
                                     picture={process.env.PUBLIC_URL + item.pictureUrl}/>
-                            </NavLink>
+                            /*</NavLink>*/
                         )}/>
                     </div>
 
