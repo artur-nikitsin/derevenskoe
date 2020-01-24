@@ -39,6 +39,7 @@ public class OrderController {
 
     @PutMapping("/orders/{orderId}")
     public ResponseEntity<Order> updateOrder(@RequestBody Order order, @PathVariable("orderId") Long orderId) {
+        orderService.getById(orderId);
         order.setId(orderId);
         return ResponseEntity.ok(orderService.update(order));
     }
@@ -50,6 +51,7 @@ public class OrderController {
 
     @DeleteMapping("/orders/{orderId}")
     public void deleteOrder(@PathVariable("orderId") Long orderId) {
+        orderService.getById(orderId);
         orderService.deleteById(orderId);
     }
 }

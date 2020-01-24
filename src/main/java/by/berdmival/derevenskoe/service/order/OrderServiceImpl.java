@@ -2,6 +2,7 @@ package by.berdmival.derevenskoe.service.order;
 
 import by.berdmival.derevenskoe.entity.account.Account;
 import by.berdmival.derevenskoe.entity.order.Order;
+import by.berdmival.derevenskoe.exception.order.OrderNotFoundException;
 import by.berdmival.derevenskoe.repository.account.AccountRepository;
 import by.berdmival.derevenskoe.repository.order.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +45,9 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public Order getById(Long orderId) {
-        return orderRepository.getOne(orderId);
+        return orderRepository.findById(orderId).orElseThrow(
+                () -> new OrderNotFoundException(Long.toString(orderId))
+        );
     }
 
     @Override
