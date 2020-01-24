@@ -1,24 +1,6 @@
 server:
   port: 7777
 spring:
-  security:
-    oauth2:
-      client:
-        registration:
-          okta:
-            client-id: client
-            client-secret: secret
-            client-name: derevenskoe
-            provider: okta
-            redirect-uri-template: https://derevenskoe.herokuapp.com/
-            client-authentication-method: basic
-            authorization-grant-type: client_credentials
-        provider:
-          okta:
-            token-uri: https://derevenskoe.herokuapp.com/oauth/token
-            authorization-uri: https://derevenskoe.herokuapp.com/oauth/authorize
-            user-info-uri: https://derevenskoe.herokuapp.com/users/validate
-            user-name-attribute: name
   datasource:
     url: ${JDBC_DATABASE_URL:jdbc:postgresql://localhost:5432/derevenskoe}
     username: ${JDBC_DATABASE_USERNAME:postgres}
