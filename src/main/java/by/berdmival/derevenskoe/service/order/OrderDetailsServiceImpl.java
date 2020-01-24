@@ -1,6 +1,6 @@
 package by.berdmival.derevenskoe.service.order;
 
-import by.berdmival.derevenskoe.entity.order.OrderDetails;
+import by.berdmival.derevenskoe.entity.order.OrderDetail;
 import by.berdmival.derevenskoe.repository.order.OrderDetailsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -15,7 +15,7 @@ public class OrderDetailsServiceImpl implements OrderDetailsService {
     private OrderDetailsRepository orderDetailsRepository;
 
     @Override
-    public OrderDetails create(OrderDetails orderDetails) {
-        return orderDetailsRepository.save(orderDetails);
+    public OrderDetail create(OrderDetail orderDetail) {
+        return orderDetailsRepository.save(orderDetail);
     }
 }

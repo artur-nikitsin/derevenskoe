@@ -25,7 +25,7 @@ public class Order {
     private OrderStatus orderStatus;
 
     @OneToMany(cascade = CascadeType.ALL)
-    private List<OrderDetails> orderDetails;
+    private List<OrderDetail> orderDetails;
 
     @Transient
     public Double getTotalOrderPrice() {

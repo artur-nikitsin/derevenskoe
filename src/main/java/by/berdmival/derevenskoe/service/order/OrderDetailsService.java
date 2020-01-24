@@ -1,7 +1,7 @@
 package by.berdmival.derevenskoe.service.order;
 
-import by.berdmival.derevenskoe.entity.order.OrderDetails;
+import by.berdmival.derevenskoe.entity.order.OrderDetail;
 
 public interface OrderDetailsService {
-    OrderDetails create(OrderDetails orderDetails);
+    OrderDetail create(OrderDetail orderDetail);
 }
