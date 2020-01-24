@@ -1,5 +1,41 @@
 
-.modalImgBox {
-  max-width: 350px;
-  max-height: 350px;
+.modalImgWrapper {
+  img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+
+.setCountButtons {
+  background-color: #98d648 !important;
+  border-color: #98d648 !important;
+
+}
+
+.setCountButtons:hover {
+  background-color: #ff7a2c !important;
+  border-color: #ff7a2c !important;
+}
+
+.counterInput {
+  background-color: #fff !important;
+  border-color: #98d648 !important;
+}
+
+.counterInput:hover {
+  background-color: #fff !important;
+  border-color: #98d648 !important;
+  color: black !important;
+}
+
+
+.addToBucketButton {
+  background-color: #98d648 !important;
+  border-color: #98d648 !important;
+}
+
+.addToBucketButton:hover {
+  background-color: #ff7a2c !important;
+  border-color: #ff7a2c !important;
 }

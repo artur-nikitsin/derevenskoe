@@ -77,8 +77,6 @@ class MainCarousel extends Component {
 
         /*TODO:    realize images requiring from components folders  */
 
-        console.log(this.props);
-
         return (
             <Container fixed maxWidth="md">
                 <Slider  {...settings}>
