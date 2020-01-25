@@ -90,9 +90,20 @@ public class ProductStorageController {
 
     @ApiOperation(value = "Delete product in the storage by it's id", response = void.class)
     @DeleteMapping(path = "/products/{productId}")
-    public void deleteProductById(@PathVariable("productId") Long productId) {
-        productService.findById(productId);
+    public void deleteProductById(@PathVariable("productId") Long productId) throws NoSuchFileException {
+        Product product = productService.findById(productId);
+        List<String> images = product.getPictures();
+
         productService.deleteOneById(productId);
+
+        for (String imageName : images
+        ) {
+            fileManager.deleteImage(
+                    productsDir,
+                    Long.toString(productId),
+                    imageName
+            );
+        }
     }
 
     @ApiOperation(value = "Get all products in the storage by category id", response = List.class)
