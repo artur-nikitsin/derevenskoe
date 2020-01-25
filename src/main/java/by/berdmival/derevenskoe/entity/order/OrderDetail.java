@@ -23,6 +23,6 @@ public class OrderDetail {
 
     @Transient
     public Double getTotalPrice() {
-        return this.getProduct().getPrice() * this.getQuantity();
+        return this.product.getPrice() * this.product.getCoefficient() * this.getQuantity();
     }
 }

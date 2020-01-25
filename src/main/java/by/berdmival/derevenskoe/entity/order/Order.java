@@ -1,5 +1,7 @@
 package by.berdmival.derevenskoe.entity.order;
 
+import by.berdmival.derevenskoe.entity.account.Account;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -26,6 +28,10 @@ public class Order {
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<OrderDetail> orderDetails;
+
+    @JsonIgnore
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Account user;
 
     @Transient
     public Double getTotalOrderPrice() {

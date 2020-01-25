@@ -33,6 +33,7 @@ public class OrderServiceImpl implements OrderService {
     public Order addOrderForUser(Order order, Account account) {
         order.setOrderDateTime(LocalDateTime.now());
         order.setOrderStatus(orderStatusService.getByName("New"));
+        order.setUser(account);
         account.getOrders().add(order);
         accountRepository.save(account);
         return order;
@@ -52,6 +53,12 @@ public class OrderServiceImpl implements OrderService {
 
     @Override
     public void deleteById(Long orderId) {
+        Order order = orderRepository.findById(orderId).orElseThrow(
+                () -> new OrderNotFoundException(Long.toString(orderId))
+        );
+        Account user = order.getUser();
+        user.getOrders().remove(order);
+        accountRepository.save(user);
         orderRepository.deleteById(orderId);
     }
 }
