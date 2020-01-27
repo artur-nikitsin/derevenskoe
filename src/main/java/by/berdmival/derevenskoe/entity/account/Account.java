@@ -26,7 +26,7 @@ public class Account extends User {
     private String firstName;
     private String lastName;
     private String patronymic;
-    private String photoUri;
+    private String photoFileName;
 
     private String phoneNumber;
     private String email;

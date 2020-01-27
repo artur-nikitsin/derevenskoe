@@ -19,7 +19,7 @@ public class Category implements Serializable {
     @Column(unique = true)
     private String name;
 
-    private String photoUrl;
+    private String photoFileName;
     private String description;
 
     @OneToMany(
