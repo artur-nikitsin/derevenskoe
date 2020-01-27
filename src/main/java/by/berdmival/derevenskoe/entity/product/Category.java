@@ -1,9 +1,11 @@
 package by.berdmival.derevenskoe.entity.product;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Data
@@ -17,9 +19,20 @@ public class Category implements Serializable {
     @Column(unique = true)
     private String name;
 
-    private String title;
+    private String photoUrl;
     private String description;
 
-    @ManyToOne
-    private Category parentCategory;
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
+    )
+    private List<Category> childCategory;
+
+    @JsonIgnore
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY,
+            mappedBy = "category"
+    )
+    private List<Product> products;
 }

@@ -23,6 +23,24 @@ public class Account extends User {
     private String password;
     private boolean enabled;
 
+    private String firstName;
+    private String lastName;
+    private String patronymic;
+    private String photoUri;
+
+    private String phoneNumber;
+    private String email;
+
+    @OneToMany
+    private List<DeliveryAddress> address;
+
+    @OneToMany(
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY,
+            mappedBy = "user"
+    )
+    private List<Order> orders;
+
     @ManyToMany
     @JoinTable(
             name = "authorities",
@@ -31,25 +49,8 @@ public class Account extends User {
     )
     private Set<CustomGrantedAuthority> authorities;
 
-    @OneToOne
-    @JoinColumn(name = "main_info_id", referencedColumnName = "id")
-    private UserMainInfo userMainInfo;
-
-    @OneToOne
-    @JoinColumn(name = "contact_info_id", referencedColumnName = "id")
-    private ContactInfo contactInfo;
-
-    private String photoUri;
-
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Order> orders;
-
-    public Account(String username, String password, Collection<? extends GrantedAuthority> authorities) {
-        super(username, password, authorities);
-    }
-
     public Account() {
-        this("U", "P", AuthorityUtils.createAuthorityList("USER"));
+        super("U", "P", AuthorityUtils.createAuthorityList("USER"));
     }
 
     public Collection<GrantedAuthority> getAuthorities() {

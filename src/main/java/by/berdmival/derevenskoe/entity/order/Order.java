@@ -30,7 +30,7 @@ public class Order {
     private List<OrderDetail> orderDetails;
 
     @JsonIgnore
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     private Account user;
 
     @Transient
