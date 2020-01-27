@@ -26,7 +26,7 @@ public class Category implements Serializable {
             cascade = CascadeType.ALL,
             fetch = FetchType.LAZY
     )
-    private List<Category> childCategory;
+    private List<Category> childCategories;
 
     @JsonIgnore
     @OneToMany(
