@@ -2,11 +2,17 @@ package by.berdmival.derevenskoe.controller;
 
 import by.berdmival.derevenskoe.entity.product.Category;
 import by.berdmival.derevenskoe.service.product.CategoryService;
+import by.berdmival.derevenskoe.util.FileManager;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.nio.file.NoSuchFileException;
 import java.util.List;
 
 @Api(value = "Products categories management system")
@@ -14,6 +20,10 @@ import java.util.List;
 public class ProductCategoryController {
     @Autowired
     CategoryService categoryService;
+    @Autowired
+    private FileManager fileManager;
+    @Value("${upload.categories}")
+    private String categoryDir;
 
     @GetMapping(path = "/categories")
     public ResponseEntity<List<Category>> allCategories() {
@@ -38,8 +48,48 @@ public class ProductCategoryController {
     }
 
     @DeleteMapping("/categories/{categoryId}")
-    public void deleteCategory(@PathVariable("categoryId") Long categoryId) {
-        categoryService.findById(categoryId);
+    public void deleteCategory(@PathVariable("categoryId") Long categoryId) throws NoSuchFileException {
+        Category category = categoryService.findById(categoryId);
+        String imageName = category.getPhotoFileName();
         categoryService.deleteById(categoryId);
+        if (imageName != null) {
+            fileManager.deleteImage(
+                    categoryDir,
+                    Long.toString(categoryId),
+                    imageName
+            );
+        }
+    }
+
+    @ApiOperation(value = "Load images for the category", response = Category.class)
+    @PostMapping(path = "/categories/{categoryId}/image")
+    public ResponseEntity<Category> addPicture(@PathVariable("categoryId") Long categoryId,
+                                               @RequestParam("image") MultipartFile uploadFiles
+    ) throws IOException {
+        Category category = categoryService.findById(categoryId);
+        category.setPhotoFileName(
+                fileManager.uploadImage(
+                        categoryDir,
+                        Long.toString(categoryId),
+                        uploadFiles
+                )
+        );
+        return ResponseEntity.ok(categoryService.update(category));
+    }
+
+    @ApiOperation(value = "Delete the image of the category", response = Category.class)
+    @DeleteMapping(path = "/categories/{categoryId}/image/{imageName}")
+    public ResponseEntity<Category> deletePictures(@PathVariable("categoryId") Long categoryId,
+                                                   @PathVariable("imageName") String imageName
+    ) throws NoSuchFileException {
+        Category category = categoryService.findById(categoryId);
+        if (fileManager.deleteImage(
+                categoryDir,
+                Long.toString(categoryId),
+                imageName
+        )) {
+            category.setPhotoFileName("");
+        }
+        return ResponseEntity.ok(categoryService.update(category));
     }
 }

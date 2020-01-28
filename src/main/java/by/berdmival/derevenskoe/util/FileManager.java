@@ -32,7 +32,7 @@ public class FileManager {
         );
     }
 
-    public List<String> uploadImage(String type, String id, MultipartFile[] files) throws IOException {
+    public List<String> uploadImages(String type, String id, MultipartFile[] files) throws IOException {
         File productImagesUploadDir = getUploadDir(type, id);
         if (!productImagesUploadDir.exists()) {
             productImagesUploadDir.mkdirs();
@@ -54,6 +54,22 @@ public class FileManager {
             resultFilenames.add(resultFilename);
         }
         return resultFilenames;
+    }
+
+    public String uploadImage(String type, String id, MultipartFile file) throws IOException {
+        File productImagesUploadDir = getUploadDir(type, id);
+        if (!productImagesUploadDir.exists()) {
+            productImagesUploadDir.mkdirs();
+        }
+
+        String uuidFile = UUID.randomUUID().toString();
+        String resultFilename = uuidFile + "_" + file.getOriginalFilename();
+        file.transferTo(new File(
+                productImagesUploadDir.getAbsolutePath() +
+                        File.separator +
+                        resultFilename
+        ));
+        return resultFilename;
     }
 
     public Boolean deleteImage(String type, String id, String imageName) throws NoSuchFileException {
