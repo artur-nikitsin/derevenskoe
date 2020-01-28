@@ -16,7 +16,6 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.nio.file.NoSuchFileException;
-import java.util.List;
 
 @Api(value = "Products management system")
 @RestController
@@ -32,7 +31,7 @@ public class ProductStorageController {
     @Value("${upload.products}")
     private String productsDir;
 
-    @ApiOperation(value = "Get all products in the storage", response = List.class)
+    @ApiOperation(value = "Get all products in the storage", response = Page.class)
     @GetMapping(path = "/products")
     public ResponseEntity<Page<Product>> getAllProducts(Pageable pageable) {
         return ResponseEntity.ok(productService.findAll(pageable));
@@ -94,7 +93,7 @@ public class ProductStorageController {
         productService.deleteOneById(productId);
     }
 
-    @ApiOperation(value = "Get all products in the storage by category id", response = List.class)
+    @ApiOperation(value = "Get all products in the storage by category id", response = Page.class)
     @GetMapping(path = "/products/category/{categoryId}")
     public ResponseEntity<Page<Product>> findByCategoryId(
             @PathVariable("categoryId") Long categoryId,

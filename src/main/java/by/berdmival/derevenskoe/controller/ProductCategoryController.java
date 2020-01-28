@@ -25,16 +25,19 @@ public class ProductCategoryController {
     @Value("${upload.categories}")
     private String categoryDir;
 
+    @ApiOperation(value = "Get all categories", response = List.class)
     @GetMapping(path = "/categories")
     public ResponseEntity<List<Category>> allCategories() {
         return ResponseEntity.ok(categoryService.getAll());
     }
 
+    @ApiOperation(value = "Create the category", response = Category.class)
     @PostMapping(path = "/categories")
     public ResponseEntity<Category> addCategory(@RequestBody Category category) {
         return ResponseEntity.ok(categoryService.save(category));
     }
 
+    @ApiOperation(value = "Update the category", response = Category.class)
     @PutMapping("/categories/{categoryId}")
     public ResponseEntity<Category> updateCategory(@RequestBody Category category, @PathVariable("categoryId") Long categoryId) {
         categoryService.findById(categoryId);
@@ -42,11 +45,13 @@ public class ProductCategoryController {
         return ResponseEntity.ok(categoryService.update(category));
     }
 
+    @ApiOperation(value = "Get the category with id", response = Category.class)
     @GetMapping("/categories/{categoryId}")
     public ResponseEntity<Category> getCategoryById(@PathVariable("categoryId") Long categoryId) {
         return ResponseEntity.ok(categoryService.findById(categoryId));
     }
 
+    @ApiOperation(value = "Delete the category")
     @DeleteMapping("/categories/{categoryId}")
     public void deleteCategory(@PathVariable("categoryId") Long categoryId) throws NoSuchFileException {
         Category category = categoryService.findById(categoryId);
