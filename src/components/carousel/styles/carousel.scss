@@ -1,50 +1,18 @@
 
-.slick-slider {
-  height: 400px;
-}
-
-
-.slick-arrow {
-  /* border: 1px solid red;*/
-}
-
-
-.carouselNextButton {
-
-}
-
-.slick-next,
-.slick-prev {
-  color: white;
-  z-index: 100;
-}
-
-.slick-next {
-  right: 50px;
-}
-
-.slick-prev {
-  left: 60px;
-
-}
-
-
-.slick-next:focus,
-.slick-next:hover,
-.slick-prev:focus,
-.slick-prev:hover {
-  color: #98d648;
-}
-
-
-@media (max-width: 600px) {
-  .slick-slider {
-    width: 500px;
+.carouselWrapper {
+  img {
+    width: 100%;
+    height: auto;
   }
 }
 
-@media (max-width: 510px) {
-  .slick-slider {
-    width: 400px;
+
+.carousel-indicators {
+  li, li:active, li:hover, li:focus {
+    background-color: #98d648 !important;
   }
 }
+
+  .sr-only {
+    background-color: green !important;
+  }

@@ -23,6 +23,10 @@ const ProductModal = (props) => {
 
     const closeBtn = <button className="close" onClick={toggle}>&times;</button>;
 
+    const addButtons = <div><CounterButtons/>
+        <AddToBucketButton/></div>;
+
+
     if (!redirectBack) {
         return (
             <Modal isOpen={modal} toggle={toggle} className={className}>

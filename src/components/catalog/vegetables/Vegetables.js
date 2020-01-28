@@ -25,7 +25,7 @@ class Vegetables extends Component {
 
         let envUrl = process.env.PUBLIC_URL;
 
-        fetch(envUrl + "/json/vegetables.json")
+        fetch(envUrl + "/json/vegetables.json", {method: "GET"})
             .then(
                 res => {
                     if (res.status !== 200) {

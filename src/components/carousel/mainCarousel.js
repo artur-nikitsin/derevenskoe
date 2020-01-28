@@ -1,104 +1,82 @@
-import React, {Component} from 'react';
-import Slider from "react-slick";
+import React, {useState} from 'react';
 import {Container} from '@material-ui/core';
+import "./styles/carousel.scss"
+import {
+    Carousel,
+    CarouselItem,
+    CarouselControl,
+    CarouselIndicators,
+    CarouselCaption
+} from 'reactstrap';
+
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
-import Grid from '@material-ui/core/Grid';
-import "./styles/carousel.scss"
 
-class MainCarousel extends Component {
-
-    render() {
-
-
-        function NextArrow(props) {
-            const {className, onClick} = props;
-
-            return (
-                <ArrowForwardIosIcon
-                    className={className}
-                    onClick={onClick}
-                    style={{fontSize: 50}}/>
-            );
-        }
-
-        function PrevArrow(props) {
-            const {className, onClick} = props;
-            return (
-                <ArrowBackIosIcon
-                    className={className}
-                    onClick={onClick}
-                    style={{fontSize: 50}}/>
-
-            );
-        }
-
-
-        const settings = {
-            dots: true,
-            infinite: false,
-            speed: 500,
-            arrows: true,
-            initialSlide: 0,
-            responsive: [
-                {
-                    breakpoint: 1024,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
-                        infinite: false,
-                        dots: true
-                    }
-                },
-                {
-                    breakpoint: 600,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2,
-                        initialSlide: 2,
-                        infinite: false
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1,
-                        infinite: false,
-                        arrows: false
-                    }
-                }
-            ],
-
-            nextArrow: <NextArrow/>,
-            prevArrow: <PrevArrow/>
-
-        };
-
-        /*TODO:    realize images requiring from components folders  */
-
-        return (
-            <Container fixed maxWidth="md">
-                <Slider  {...settings}>
-                    <div>
-                        <img src="assets/caroucel/10022a-960x400.webp" alt=""/>
-                    </div>
-                    <div>
-                        <img src="assets/caroucel/bbab61-960x400.webp" alt=""/>
-                    </div>
-                    <div>
-                        <img src="assets/caroucel/bbab61-960x400.webp" alt=""/>
-                    </div>
-                    <div>
-                        <img src="assets/caroucel/bbab61-960x400.webp" alt=""/>
-                    </div>
-
-                </Slider>
-            </Container>
-        );
+const items = [
+    {
+        src: 'assets/caroucel/10022a-960x400.webp',
+        altText: 'Slide 1',
+        caption: 'Slide 1'
+    },
+    {
+        src: 'assets/caroucel/bbab61-960x400.webp',
+        altText: 'Slide 2',
+        caption: 'Slide 2'
     }
-}
+];
 
+const MainCarousel = (props) => {
+
+
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [animating, setAnimating] = useState(false);
+
+    const next = () => {
+        if (animating) return;
+        const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
+        setActiveIndex(nextIndex);
+    };
+
+    const previous = () => {
+        if (animating) return;
+        const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
+        setActiveIndex(nextIndex);
+    };
+
+    const goToIndex = (newIndex) => {
+        if (animating) return;
+        setActiveIndex(newIndex);
+    };
+
+    const slides = items.map((item) => {
+        return (
+            <CarouselItem
+                onExiting={() => setAnimating(true)}
+                onExited={() => setAnimating(false)}
+                key={item.src}>
+
+                <img src={item.src} alt={item.altText}/>
+                <CarouselCaption captionText={item.caption} captionHeader={item.caption}/>
+            </CarouselItem>
+        );
+    });
+
+    return (
+        <Container fixed maxWidth={"md"} className={"container2"}>
+
+            <Carousel
+                className={"carouselWrapper"}
+                activeIndex={activeIndex}
+                next={next}
+                previous={previous}>
+                <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex}/>
+                {slides}
+                <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous}/>
+                <CarouselControl direction="next" directionText="Next" onClickHandler={next}/>
+            </Carousel>
+
+        </Container>
+    );
+};
 
 export default MainCarousel;
-

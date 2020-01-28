@@ -1,0 +1,37 @@
+
+.slick-slider {
+
+}
+
+
+.slick-arrow {
+  /* border: 1px solid red;*/
+}
+
+
+.carouselNextButton {
+
+}
+
+.slick-next,
+.slick-prev {
+  color: white;
+  z-index: 100;
+}
+
+.slick-next {
+  right: 50px;
+}
+
+.slick-prev {
+  left: 60px;
+
+}
+
+
+.slick-next:focus,
+.slick-next:hover,
+.slick-prev:focus,
+.slick-prev:hover {
+  color: #98d648;
+}

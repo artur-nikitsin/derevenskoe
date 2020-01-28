@@ -30,6 +30,7 @@ export default function ProductCard(props) {
 
     const classes = useStyles();
 
+
     return (
 
         <div>
@@ -54,8 +55,10 @@ export default function ProductCard(props) {
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
+
                     <CounterButtons/>
                     <AddToBucketButton/>
+
                 </CardActions>
             </Card>
 
