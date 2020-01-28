@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/derevenskoe/static/css/main.d2ede852.chunk.css",
-    "main.js": "/derevenskoe/static/js/main.2f56069d.chunk.js",
-    "main.js.map": "/derevenskoe/static/js/main.2f56069d.chunk.js.map",
+    "main.css": "/derevenskoe/static/css/main.4ff5a4b9.chunk.css",
+    "main.js": "/derevenskoe/static/js/main.f56439d6.chunk.js",
+    "main.js.map": "/derevenskoe/static/js/main.f56439d6.chunk.js.map",
     "runtime-main.js": "/derevenskoe/static/js/runtime-main.5273cf60.js",
     "runtime-main.js.map": "/derevenskoe/static/js/runtime-main.5273cf60.js.map",
     "static/css/2.84da8976.chunk.css": "/derevenskoe/static/css/2.84da8976.chunk.css",
-    "static/js/2.a3cd958c.chunk.js": "/derevenskoe/static/js/2.a3cd958c.chunk.js",
-    "static/js/2.a3cd958c.chunk.js.map": "/derevenskoe/static/js/2.a3cd958c.chunk.js.map",
+    "static/js/2.144a2b29.chunk.js": "/derevenskoe/static/js/2.144a2b29.chunk.js",
+    "static/js/2.144a2b29.chunk.js.map": "/derevenskoe/static/js/2.144a2b29.chunk.js.map",
     "index.html": "/derevenskoe/index.html",
-    "precache-manifest.fbb50bbffbbf587d38d0fba1feae2c5f.js": "/derevenskoe/precache-manifest.fbb50bbffbbf587d38d0fba1feae2c5f.js",
+    "precache-manifest.d9a239c1a0c5d349226604e423e0a08d.js": "/derevenskoe/precache-manifest.d9a239c1a0c5d349226604e423e0a08d.js",
     "service-worker.js": "/derevenskoe/service-worker.js",
     "static/css/2.84da8976.chunk.css.map": "/derevenskoe/static/css/2.84da8976.chunk.css.map",
-    "static/css/main.d2ede852.chunk.css.map": "/derevenskoe/static/css/main.d2ede852.chunk.css.map"
+    "static/css/main.4ff5a4b9.chunk.css.map": "/derevenskoe/static/css/main.4ff5a4b9.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.5273cf60.js",
     "static/css/2.84da8976.chunk.css",
-    "static/js/2.a3cd958c.chunk.js",
-    "static/css/main.d2ede852.chunk.css",
-    "static/js/main.2f56069d.chunk.js"
+    "static/js/2.144a2b29.chunk.js",
+    "static/css/main.4ff5a4b9.chunk.css",
+    "static/js/main.f56439d6.chunk.js"
   ]
 }
