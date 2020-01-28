@@ -86,8 +86,8 @@ class Vegetables extends Component {
         }
 
 
-        console.log(this.props.match);
-        console.log(productsToPage);
+       /* console.log(this.props.match);
+        console.log(productsToPage);*/
 
         return (
 

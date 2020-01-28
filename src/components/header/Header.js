@@ -18,10 +18,10 @@ class Header extends Component {
 
     handleScroll = () => {
         if (!this.state.mobileWidth) {
-            if (window.scrollY >= 80) {
+            if (window.scrollY >= 90) {
                 this.setState({scrolled: true});
             }
-            if (window.scrollY <= 80) {
+            if (window.scrollY <= 90) {
                 this.setState({scrolled: false});
             }
         }
@@ -42,7 +42,7 @@ class Header extends Component {
             this.setState({mobileWidth: true});
 
         }
-        if (window.innerWidth >= 760) {
+        if (window.innerWidth > 760) {
             this.setState({mobileWidth: false});
 
         }

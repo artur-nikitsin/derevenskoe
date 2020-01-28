@@ -11,6 +11,8 @@ import {
 
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import Vegetables from "../catalog/vegetables/Vegetables";
+import {Route} from "react-router-dom";
 
 const items = [
     {
@@ -61,8 +63,10 @@ const MainCarousel = (props) => {
         );
     });
 
+
+
     return (
-        <Container fixed maxWidth={"md"} className={"container2"}>
+        <Container fixed /*maxWidth={"md"}*/ className={"container2"}>
 
             <Carousel
                 className={"carouselWrapper"}

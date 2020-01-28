@@ -1,50 +1,98 @@
-@import "./mixinForLists.scss";
+@media (max-width: 760px) {
+  .HeaderMenu {
+    background: #f8f9fa;
 
-.HeaderMenu {
-  background: #f8f9fa;
+    ul {
 
-  ul {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+      li {
 
-    li {
+        text-align: left;
+        padding: 2px 10px 2px 10px;
 
-      text-align: left;
-      padding: 2px 10px 2px 10px;
+        a {
+          text-decoration: none;
+          font: 500 15px 'PT Sans', sans-serif;
+          color: black;
 
-      a {
-        /*border: 1px solid red;*/
-        text-decoration: none;
-        font: 500 15px 'PT Sans', sans-serif;
-        color: black;
+        }
 
+        a:hover,
+        a:focus {
+          font: 500 15px 'PT Sans', sans-serif;
+          color: #98d648;
+          list-style-type: none;
+        }
+
+        a.active {
+          font: 500 15px 'PT Sans', sans-serif;
+          color: #ff7a2c;
+          list-style-type: none;
+        }
       }
 
-      a:hover,
-      a:focus {
-        font: 500 15px 'PT Sans', sans-serif;
+      li.active {
         color: #98d648;
-        list-style-type: none;
-      }
-
-      a.active {
-        font: 500 15px 'PT Sans', sans-serif;
-        color: #ff7a2c;
-        list-style-type: none;
       }
     }
 
-    li.active {
-      color: #98d648;
+    .dropdown-item.active, .dropdown-item:active {
+      color: #fff;
+      text-decoration: none;
+      background-color: #98d648;
     }
-  }
 
-  .dropdown-item.active, .dropdown-item:active {
-    color: #fff;
-    text-decoration: none;
-    background-color: #98d648;
   }
-
 }
 
+
+
+@media (min-width: 761px) {
+
+  .HeaderMenu {
+    background: #f8f9fa;
+
+    ul {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      align-items: center;
+
+      li{
+        text-align: left;
+        padding: 2px 10px 2px 10px;
+
+        a {
+          /*border: 1px solid red;*/
+          text-decoration: none;
+          font: 500 15px 'PT Sans', sans-serif;
+          color: black;
+
+        }
+
+        a:hover,
+        a:focus {
+          font: 500 15px 'PT Sans', sans-serif;
+          color: #98d648;
+          list-style-type: none;
+        }
+
+        a.active {
+          font: 500 15px 'PT Sans', sans-serif;
+          color: #ff7a2c;
+          list-style-type: none;
+        }
+      }
+
+      li.active {
+        color: #98d648;
+      }
+    }
+
+    .dropdown-item.active, .dropdown-item:active {
+      color: #fff;
+      text-decoration: none;
+      background-color: #98d648;
+    }
+
+  }
+}

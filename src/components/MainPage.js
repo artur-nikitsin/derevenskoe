@@ -49,6 +49,7 @@ class MainPage extends Component {
 
                     <div className={"mainPage"}>
 
+
                         <Route exact path='/' component={MainCarousel}/>
                         <Route path='/catalog' component={Catalog}/>
                         <Route path='/delivery' component={Delivery}/>
