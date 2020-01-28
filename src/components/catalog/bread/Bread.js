@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
 import {Container} from '@material-ui/core';
-import ProductCard from "../productCard/ProductCard";
+
 
 class Bread extends Component {
 
@@ -11,7 +11,6 @@ class Bread extends Component {
         return (
             <Container>
                 <div><p>Bread</p></div>
-                <ProductCard/>
             </Container>
         );
     }

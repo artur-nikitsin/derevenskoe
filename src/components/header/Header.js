@@ -11,25 +11,51 @@ class Header extends Component {
         this.handleScroll = this.handleScroll.bind(this);
         this.state = {
             scrolled: false,
-            offsetTop: 0
+            offsetTop: 0,
+            mobileWidth: false
         };
     }
 
     handleScroll = () => {
-        if (window.scrollY >= 100) {
-            this.setState({scrolled: true});
+        if (!this.state.mobileWidth) {
+            if (window.scrollY >= 80) {
+                this.setState({scrolled: true});
+            }
+            if (window.scrollY <= 80) {
+                this.setState({scrolled: false});
+            }
         }
-        if (window.scrollY <= 100) {
-            this.setState({scrolled: false});
-            console.log(this.state);
+        if (this.state.mobileWidth) {
+            if (window.scrollY >= 0) {
+                this.setState({scrolled: true});
+            }
+            if (window.scrollY <= 0) {
+                this.setState({scrolled: false});
+            }
+        }
+
+
+    };
+
+    handleResize = () => {
+        if (window.innerWidth <= 760) {
+            this.setState({mobileWidth: true});
+
+        }
+        if (window.innerWidth >= 760) {
+            this.setState({mobileWidth: false});
+
         }
     };
 
     componentDidMount = () => {
         window.addEventListener('scroll', this.handleScroll, true);
+        window.addEventListener('resize', this.handleResize, true);
+        this.handleResize();
     };
     componentWillUnmount = () => {
         window.removeEventListener('scroll', this.handleScroll);
+        window.removeEventListener('resize', this.handleResize, true);
     };
 
 
@@ -37,9 +63,11 @@ class Header extends Component {
 
         return (
             <div className={this.state.scrolled ? "Header scrolled" : "Header"}>
-                <HeaderTop scrolled={this.state.scrolled}/>
-                <HeaderMenu scrolled={this.state.scrolled}/>
-               {/* <CategoriesMenu scrolled={this.state.scrolled}/>*/}
+                <HeaderTop scrolled={this.state.scrolled}
+                           mobileWidth={this.state.mobileWidth}/>
+                <HeaderMenu scrolled={this.state.scrolled}
+                            mobileWidth={this.state.mobileWidth}/>
+                {/* <CategoriesMenu scrolled={this.state.scrolled}/>*/}
             </div>
         );
     }

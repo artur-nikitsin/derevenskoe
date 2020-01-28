@@ -4,20 +4,20 @@
   background: #f8f9fa;
 
   ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 
     li {
+
       text-align: left;
       padding: 2px 10px 2px 10px;
 
-
       a {
-
+        /*border: 1px solid red;*/
         text-decoration: none;
         font: 500 15px 'PT Sans', sans-serif;
         color: black;
-        align-items: center;
-        list-style-type: none;
-
 
       }
 

@@ -14,8 +14,8 @@ class HeaderTop extends Component {
     render() {
 
         return (
-            <div className={this.props.scrolled ? "headerTopOff" : "headerTop"}>
-                <Container className={"container"}>
+            <div className={this.props.mobileWidth || this.props.scrolled ? "headerTopOff" : "headerTop"}>
+                <Container>
                     <ul>
                         <Grid container
                               direction="row"
