@@ -33,30 +33,15 @@ const HeaderMenu = (props) => {
     const [mobileWidth, setMobileWidth] = useState(false);
 
     const toggle = () => {
+        if (window.scrollY >= 0) {
+            window.scrollTo(0, 0);
+        }
+
         if (mobileWidth) {
-            setIsOpen(!isOpen)
+            setIsOpen(!isOpen);
+
         }
     };
-
-    /* const handleScroll = () => {
-         if (!mobileWidth) {
-             if (window.scrollY >= 90) {
-                 setMobileWidth(true);
-             }
-             if (window.scrollY <= 90) {
-                 setMobileWidth(false)
-             }
-         }
-         if (mobileWidth) {
-             if (window.scrollY >= 0) {
-                 setMobileWidth(true);
-             }
-             if (window.scrollY <= 0) {
-                 setMobileWidth(false)
-             }
-         }
-     };
- */
 
     const handleResize = () => {
         if (window.innerWidth <= 760) {
@@ -75,7 +60,9 @@ const HeaderMenu = (props) => {
         handleResize();
 
         window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize)
+        };
     }, []);
 
 
