@@ -4,7 +4,9 @@ import {currentPageAction} from '../actions/currentPageAction'
 import {Container} from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 
+import HeaderTop from "./header/HeaderTop";
 import Header from "./header/Header";
+import HeaderMenu from "./header/HeaderMenu";
 import MainCarousel from "./carousel/mainCarousel";
 import Catalog from "./catalog/Catalog";
 import Delivery from "./delivery/Delivery";
@@ -45,7 +47,8 @@ class MainPage extends Component {
                     justify="space-between"
                     alignItems="space-around">
 
-                    <Header/>
+                    <HeaderTop/>
+                    <HeaderMenu/>
 
                     <div className={"mainPage"}>
 

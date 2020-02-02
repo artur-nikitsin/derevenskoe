@@ -1,6 +1,9 @@
 @media (max-width: 760px) {
   .HeaderMenu {
     background: #f8f9fa;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 
     ul {
 
@@ -45,11 +48,14 @@
 }
 
 
-
 @media (min-width: 761px) {
 
   .HeaderMenu {
+    position: sticky;
+    top: 0;
     background: #f8f9fa;
+    z-index: 1000;
+
 
     ul {
       display: flex;
@@ -57,7 +63,7 @@
       flex-wrap: wrap;
       align-items: center;
 
-      li{
+      li {
         text-align: left;
         padding: 2px 10px 2px 10px;
 

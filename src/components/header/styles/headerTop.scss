@@ -1,11 +1,17 @@
-@import  "./mixinForLists.scss";
+@import "./mixinForLists.scss";
 
-.headerTop {
-  background: #98d648;
-  padding: 5px 0 5px 0;
-  min-height: 90px;
- /* @include reset-list;*/
+
+@media (max-width: 760px) {
+  .headerTop {
+    display: none;
+  }
 }
-.headerTopOff {
- display: none;
+
+@media (min-width: 761px) {
+  .headerTop {
+    background: #98d648;
+    padding: 5px 0 5px 0;
+    min-height: 90px;
+  }
 }
+

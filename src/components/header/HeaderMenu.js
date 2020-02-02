@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {connect} from 'react-redux'
 import {currentPageAction} from '../../actions/currentPageAction'
 import {Container} from '@material-ui/core';
@@ -30,11 +30,54 @@ import {
 const HeaderMenu = (props) => {
     const [isOpen, setIsOpen] = useState(false);
 
+    const [mobileWidth, setMobileWidth] = useState(false);
+
     const toggle = () => {
-        if (props.mobileWidth) {
+        if (mobileWidth) {
             setIsOpen(!isOpen)
         }
     };
+
+    /* const handleScroll = () => {
+         if (!mobileWidth) {
+             if (window.scrollY >= 90) {
+                 setMobileWidth(true);
+             }
+             if (window.scrollY <= 90) {
+                 setMobileWidth(false)
+             }
+         }
+         if (mobileWidth) {
+             if (window.scrollY >= 0) {
+                 setMobileWidth(true);
+             }
+             if (window.scrollY <= 0) {
+                 setMobileWidth(false)
+             }
+         }
+     };
+ */
+
+    const handleResize = () => {
+        if (window.innerWidth <= 760) {
+            setMobileWidth(!mobileWidth);
+
+        }
+        if (window.innerWidth > 760) {
+            setMobileWidth(mobileWidth);
+
+        }
+    };
+
+
+    useEffect(() => {
+
+        handleResize();
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
 
     return (
         <div className={"HeaderMenu"}>
